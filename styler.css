@@ -12,10 +12,10 @@
 }
 body{
     overflow: hidden;
-}
+} 
 .container{
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     background-color: #f3f3f8;
 }
 nav{
