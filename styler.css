@@ -134,7 +134,7 @@ font-weight: 900;
 .typed{
     color: #7f00ff;
     text-transform: capitalize; 
-} p{
+}.top-line p{
     display: block;
     width: 90%;
     font-size: 2rem;
