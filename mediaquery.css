@@ -224,6 +224,9 @@
     }
 }
 @media (max-width:323px){
+    p{
+    font-size;5px;
+    }
     .topline{
         display: block;
         position: relative;
