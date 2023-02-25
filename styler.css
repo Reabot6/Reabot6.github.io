@@ -15,7 +15,7 @@ body{
 } 
 .container{
     width: 100%;
-    min-height: 90%;
+    min-height: 100vh;
     background-color: #f3f3f8;
 }
 nav{
@@ -65,7 +65,7 @@ nav{
 .wrapper{
     display: flex;
     width: 100%;
-height: calc(90%- 80px);
+height: calc(100vh- 80px);
 justify-content: center;
 align-items: center;
 padding: 0 10%;
@@ -188,8 +188,4 @@ animation: animateuser 4s linear infinite;
         top: -55px;
     }
 }
-footer{
-Background-color:white;
-Height:100px
-Width:100%;
-}
+
