@@ -16,7 +16,7 @@
         overflow-y: scroll;
     }
     .container{
-        width: 100vw;
+        width: 100%;
 min-height:100vh;
         overflow-auto;
         background-color: #f3f3f8;
