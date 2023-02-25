@@ -77,7 +77,7 @@
     }.wrapper::before{
         position: absolute;
         content: '';
-    height: 500px;
+    height: 300px;
     width: 300px;
     border-radius: 50%;
     left: -19%;
@@ -141,7 +141,7 @@
     } p{
         display: block;
         width: 90%;
-        
+        Text-align: center;
         color: #3d535f;
     
     }
