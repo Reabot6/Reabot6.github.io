@@ -16,8 +16,8 @@
         overflow-y: scroll;
     }
     .container{
-        width: 100vw;
-        min-height: 100vh;
+        width: 100%;
+        overflow-auto;
         background-color: #f3f3f8;
     }
     nav{
