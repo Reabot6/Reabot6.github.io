@@ -1,0 +1,3883 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://172.20.10.1:33455/web/index.html -->
+<html dir="ltr" mozdisallowselectionprint="" moznomarginboxes="" class="" avalonctrl="APPController"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><avalon>X<style id="avalonStyle">.avalonHide{ display: none!important }</style><li ms-class="{{modules[$index]}}_ic" ms-if-loop="$index &gt; 0 &amp;&amp; $index &lt; 5"><div class="ic_bg" ms-click="getInModule($index)"></div><span>{{countInfo[modules[$index]]}}</span></li><li ms-class="{{modules[$index]}}_ic" ms-if-loop="$index &gt; 0 &amp;&amp; $index &lt; 5"><div class="ic_bg" ms-click="getInModule($index)"></div><span>{{countInfo[modules[$index]]}}</span></li><li ms-class="{{modules[$index]}}_ic" ms-if-loop="$index &gt; 0 &amp;&amp; $index &lt; 5"><div class="ic_bg" ms-click="getInModule($index)"></div><span>{{countInfo[modules[$index]]}}</span></li><li ms-class="{{modules[$index]}}_ic" ms-if-loop="$index &gt;= 5 &amp;&amp; $index != 55"><div class="ic_bg" ms-click="getInModule($index)"></div><span>{{countInfo[modules[$index]]}}</span></li><li ms-class="{{modules[$index]}}_ic" ms-if-loop="$index &gt;= 5 &amp;&amp; $index != 55"><div class="ic_bg" ms-click="getInModule($index)"></div><span>{{countInfo[modules[$index]]}}</span></li><li ms-class="{{modules[$index]}}_ic" ms-if-loop="$index &gt;= 5 &amp;&amp; $index != 55"><div class="ic_bg" ms-click="getInModule($index)"></div><span>{{countInfo[modules[$index]]}}</span></li><li ms-class="{{modules[$index]}}_ic" ms-if-loop="$index &gt;= 5 &amp;&amp; $index != 55"><div class="ic_bg" ms-click="getInModule($index)"></div><span>{{countInfo[modules[$index]]}}</span></li><li ms-class="{{modules[$index]}}_ic" ms-if-loop="$index &gt;= 5 &amp;&amp; $index != 55"><div class="ic_bg" ms-click="getInModule($index)"></div><span>{{countInfo[modules[$index]]}}</span></li><div ms-if-loop="$index &gt; 0" ms-click="clickAppBarLeft($index, el.code, this, $event)" ms-class="{{el.code}}_btn" ms-title="el.title">
+						{{el.name}}
+					</div><div ms-if-loop="$index === 0" ms-click="clickAppBarLeft($index, el.code, this, $event)" ms-class="{{el.code}}_btn" ms-title="el.title">
+						{{el.name}}
+					</div><div ms-if-loop="$index === 0" ms-click="clickAppBarLeft($index, el.code, this, $event)" ms-class="{{el.code}}_btn" ms-title="el.title">
+						{{el.name}}
+					</div><div ms-if-loop="$index === 0" ms-click="clickAppBarLeft($index, el.code, this, $event)" ms-class="{{el.code}}_btn" ms-title="el.title">
+						{{el.name}}
+					</div><div ms-if-loop="$index &gt; 0" ms-click="clickAppBarLeft($index, el.code, this, $event)" ms-class="{{el.code}}_btn" ms-title="el.title">
+						{{el.name}}
+					</div><div ms-if-loop="$index === 0" ms-click="clickAppBarLeft($index, el.code, this, $event)" ms-class="{{el.code}}_btn" ms-title="el.title">
+						{{el.name}}
+					</div><div ms-if-loop="$index === 0" ms-click="clickAppBarLeft($index, el.code, this, $event)" ms-class="{{el.code}}_btn" ms-title="el.title">
+						{{el.name}}
+					</div><div ms-if-loop="$index === 0" ms-click="clickAppBarLeft($index, el.code, this, $event)" ms-class="{{el.code}}_btn" ms-title="el.title">
+						{{el.name}}
+					</div></avalon>
+		
+		
+		<meta name="renderer" content="webkit"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
+		<link rel="shortcut icon" href="http://172.20.10.1:33455/web/favicon.ico">
+		<title>Xender Web</title>
+<link type="text/css" href="./chapter one_files/all_2017_01_04_06_06_04.css" rel="stylesheet" media="all">
+		
+	</head>
+	
+	<body>
+		<div id="APP" class="APP" onselectstart="return true" avalonctrl="appLanguage">
+			<div id="loginPanel" class="loginPanel" style="display: none;" avalonctrl="login">		<div id="screen-container" class="screen-container">
+			<!-- multi screen for phone -->
+			<div id="phoneScreen-container">
+				
+			</div>
+			
+			<!-- Login area -->
+			<div class="login-area">
+				<div id="loginBgUp" class="loginBgUp"></div>
+
+				<div id="loginBgDown" class="loginBgDown"></div>
+	
+				<div id="loginWindow" class="loginWindow" style="left: -18px; font-size: 160%;">
+					<div class="loginHead">
+						<!-- 
+						<div class="loginTitle">
+							{{title}}
+							<span>Beta</span>
+						</div>
+						 -->
+						<div class="en-ch">
+							<!--ms-repeat--><span><span class="zhstyle">简  </span><b style="display: inline;">|</b></span><span><span class="zhstyle">繁  </span><b style="display: inline;">|</b></span><span><span class="zhstyle">ES </span><b style="display: inline;">|</b></span><span><span class="zhstyle">PT </span><b style="display: none;">|</b></span><!--ms-repeat-end-->
+						</div>
+					</div>
+					<div class="loginWaiting">
+						<img id="loginQRcode" class="qrcode" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAAEDCAIAAAC+s/acAAAFOElEQVR42u3dS3LEMAgFQN//0soVUnHggdxv7a9MawFTNc8RkXMeSyBCgggJIiSIkCBCgggJIiSIkCBCgggJIiSIkCBSK+GZl7cv/+trtt09u3QvX3N1hZBAAgkkkEACCSSQQAIJJJBAAgkkkEBClYS+dm/B56z48AMfqY3HlgohgQQSSCCBBBJIIIEEEkgggQQSSCCBhLyEga3ujzhcPZ8JD0NIIIEEEkgggQQSSCCBBBJIIIEEEkgg4TsS2u7+5eY9CSSQQAIJJJBAAgkkkEACCSSQQAIJJJBw3XtG2+dtZVfxjUgggQQSSCCBBBJIIIEEEkgggQQSSCCBhMUffnWJZEcHH9kaSCCBBBJIIIEEEkgggQQSSCCBBBJIICEvIZsKM45MTQnaKoQER5JAgiNJIMGRJJDgSBJIcCQJJDiShCoJq9O3oAXXHDhgubBCSCCBBBJIIIEEEkgggQQSSCCBBBJIIOG9hIFTgoHjiLbXzG4NW0YcJJBAAgkkkEACCSSQQAIJJJBAAgkkkLBJwsBedXjp5w0usqeH350EEkgggQQSSCCBBBJIIIEEEkgggQQSFkkY2MDesl9kebQNQ0p0kUACCSSQQAIJJJBAAgkkkEACCSSQQMJ7CRUvv7qBPfCaWwZBAydOJJBAAgkkkEACCSSQQAIJJJBAAgkkkFAloY1HWwa+0eo9aMuQgQQSSCCBBBJIIIEEEkgggQQSSCCBBBL+QcLEHnD0kdpqMXujtglJVhcJJJBAAgkkkEACCSSQQAIJJJBAAgkktM4T7tO1pX2eHVxkJUycrJFAAgkkkEACCSSQQAIJJJBAAgkkkEDCSf82eEtTfCCPgUsX3gFJIIEEEkgggQQSSCCBBBJIIIEEEkgg4b2E+1rIFY9UkdOV7DgiTI4EEkgggQQSSCCBBBJIIIEEEkgggQQSiuYJ9/X+2z5n9pEGFmj44UkggQQSSCCBBBJIIIEEEkgggQQSSCChU0JbW3og4y0FOrDos8VAAgkkkEACCSSQQAIJJJBAAgkkkEACCZskVKzIaodPVwbOUtpWngQSSCCBBBJIIIEEEkgggQQSSCCBBBKqJFQsaDZbHn5gm//T8wQSSCCBBBJIIIEEEkgggQQSSCCBBBJION/+E662rWHgHpStkL6HJ4EEEkgggQQSSCCBBBJIIIEEEkgggYROCdmOfnaV277cwD1o4HcngQQSSCCBBBJIIIEEEkgggQQSSCCBhGfRb1EHDgTaeurZaw6cJ0zcL0gggQQSSCCBBBJIIIEEEkgggQQSSCAhPk/IfvhshQ2shmdesrsqCSSQQAIJJJBAAgkkkEACCSSQQAIJJPyDhC0ZaCY7DGnbWdoengQSSCCBBBJIIIEEEkgggQQSSCCBBBKGStjSgb6vT3+fmYmrRAIJJJBAAgkkkEACCSSQQAIJJJBAAglFEgZOCbKTh+zpFXWzBWd4nkACCSSQQAIJJJBAAgkkkEACCSSQQAIJZ+T/rGXvnr3RfVUb3mpJIIEEEkgggQQSSCCBBBJIIIEEEkgg4eMSBo44Kk7Pit1imwQSSCCBBBJIIIEEEkgggQQSSCCBBBJIaKqwitO3kMsWfcnYhAQSSCCBBBJIIIEEEkgggQQSSCCBBBI6JWSb92099ezSDWzJZyGRQAIJJJBAAgkkkEACCSSQQAIJJJBAwlAJ2WwZCKweHbRtIrvnCSSQQAIJJJBAAgkkkEACCSSQQAIJJJAgcndIECFBhAQREkRIECFBhAQREkRIECFBhAQREkRIEPlLfgC/Zmpyb8QgZAAAAABJRU5ErkJggg\u003d\u003d">
+						<!----> 
+						<div class="loginScan">
+							<h2>Xender Web</h2>
+							<span>Scan the QR code using Xender</span>
+						</div>
+						
+						<!-- <p><a class="download_weilian" href="apk.html" target="_blank">下载微联</a></p> -->
+						<!-- <p>状态: {{channelstatus}}</p> -->
+					</div>
+					<div id="bigScreen" class="loginContent" style="display: block;">
+						<div class="device-content">
+							<div class="device-img device-android"></div>
+							<div class="device-des">
+								<h2>Android</h2>
+								<p>Open up Xender, switch to Connect PC and Scan</p>
+							</div>
+						</div>
+						<div class="device-content">
+							<div class="device-img device-iphone"></div>
+							<div class="device-des">
+								<h2>iOS</h2>
+								<p>Open up Xender, swipe right, select Connect PC and Scan</p>
+							</div>
+						</div>
+						<div class="login_fb">
+							<span>Can't connect?</span><a href="mailto:service@xender.com" class="email_link">Email us the problem</a>
+							<!-- 
+							<div class="intro_video">
+								<div class="intro_button" ms-click="introVideo"></div>
+							</div>
+							<div ms-class="{{videoTip}}"></div>
+							 -->
+						</div>
+					</div>
+					
+					<div id="smallScreen" class="loginContent">
+						<div class="device-content">
+							<img src="./chapter one_files/btn_scan_android.png">
+							<div class="device-des">
+								<h2>Android</h2>
+								<p>Open up Xender, switch to Connect PC and Scan</p>
+							</div>
+						</div>
+						<div class="device-content">
+							<img src="./chapter one_files/btn_scan_ios.png">
+							<div class="device-des">
+								<h2>iOS</h2>
+								<p>Open up Xender, swipe right, select Connect PC and Scan</p>
+							</div>
+						</div>
+						<div class="login_fb">
+							<span>Can't connect?</span><a href="mailto:service@xender.cn" class="email_link">Email us the problem</a>
+							<!-- 
+							<div class="intro_video">
+								<div class="intro_button" ms-click="introVideo"></div>
+							</div>
+							<div ms-class="{{videoTip}}"></div>
+							 -->
+						</div>
+					</div>
+					
+					<!-- 
+					<div class="useChrome">
+						<span ms-click="downloadChrome">{{changeLang['useChrome']}}</span>
+					</div>
+					 -->
+				</div>
+				
+			</div>
+		</div>			
+			
+		<div id="download-app" class="download-app">
+			<div class="table-cell">
+				<img id="pc_logo" src="http://172.20.10.1:33455/web/index.html">
+			</div>
+			
+			<div class="download-app-cont table-cell">
+				<span>Xender 客户端</span>
+				<span>手机传输用Xender</span>
+			</div>
+			
+			<div id="download-app-btn" class="download-app-btn table-cell">
+				<span>立即下载</span>
+			</div>
+			
+			<div id="close-download-app" class="close-download-app">
+				<img src="./chapter one_files/pc_wrong.png">
+			</div>
+		</div>
+				
+			
+			
+			
+			
+</div>
+			<div id="mainScreen" class="mainScreen" avalonctrl="mainScreen" style="display: block;">			<!-- main screen --> 
+		
+			<div id="appNav" class="app_nav" onselectstart="return false">				<!-- app nav --> 
+				<div class="logo_xender"><div class="pressed"></div></div>
+				
+				<div class="leftLine"></div>
+				
+				<ul class="moduleList" data-step="4" data-intro="3" data-position="right">
+					<!--ms-repeat--><li id="cl_home" class="">
+						<div class="module_icon"><b></b><span class="message_bubble" style="display: none;"></span></div>
+						<div class="module_title">Home</div>
+					</li><li id="cl_imgModule">
+						<div class="module_icon"><b></b><span class="message_bubble" style="display: none;"></span></div>
+						<div class="module_title">Images</div>
+					</li><li id="cl_videoModule" class="">
+						<div class="module_icon"><b></b><span class="message_bubble" style="display: none;"></span></div>
+						<div class="module_title">Videos</div>
+					</li><li id="cl_musicModule" class="">
+						<div class="module_icon"><b></b><span class="message_bubble" style="display: none;"></span></div>
+						<div class="module_title">Music</div>
+					</li><li id="cl_docModule" class="selected">
+						<div class="module_icon"><b></b><span class="message_bubble" style="display: none;"></span></div>
+						<div class="module_title">Documents</div>
+					</li><li id="cl_appModule" style="display: none;">
+						<div class="module_icon"><b></b><span class="message_bubble" style="display: none;"></span></div>
+						<div class="module_title">Apps</div>
+					</li><li id="cl_fileModule" style="display: none;">
+						<div class="module_icon"><b></b><span class="message_bubble" style="display: none;"></span></div>
+						<div class="module_title">Files</div>
+					</li><!--ms-repeat-end-->
+				</ul>
+				<div class="leftLine"></div>
+				
+				<!-- 
+				<ul class="moduleList webModule">
+					<li ms-attr-id="cl_{{webModules[$index]}}" ms-repeat="webModules" ms-click="clickWebModule($index)" ms-class="selected:$index === selectedWebIndex"><div><b></b></div><span>{{webModuleNames[$index]}}</span></li>
+				</ul>
+				<div class="leftLine"></div>
+				 -->
+				<div class="task_manager">
+					<b></b>
+				</div>
+			</div>
+			<div id="appContainer" class="app_container" style="width: 802px;">				<!-- app container--> 
+				<div class="app_bar_bg"></div>
+				<div id="appBar" class="app_bar" onselectstart="return false">				<!-- app bar -->
+				<div class="head_btns" data-step="1" data-intro="0" data-position="bottom-left-aligned">
+				
+					<!--ms-repeat--><div class="docs_add_btn" title="Upload document to phone">
+						Upload Document
+					</div><!--ms-if--><!--ms-if--><!--ms-if--><!--ms-repeat-end-->
+					<!--ms-repeat--><!--ms-if--><div class="export_btn" title="Batch Download">
+						
+					</div><div class="delete_btn" title="Delete">
+						
+					</div><div class="refresh_btn" title="Refresh">
+						
+					</div><!--ms-repeat-end-->
+				<!--	
+					<div ms-repeat="barButtons" ms-mousedown="clickAppBarLeft($index, el.code, this, $event)" ms-mouseup="upAppBarLeft($index, el.code, this, $event)" ms-mouseout="outAppBarLeft($index, el.code, this, $event)" ms-class="{{el.code}}_btn" ms-title="el.title">
+						{{el.name}}
+					</div>
+					-->
+				</div>
+				
+				<ul class="topNav" data-step="2" data-intro="1" data-position="bottom-right-aligned">
+				<!--  
+					<li>
+						<select ms-each="langOptions" ms-change="langChange($event)">
+							<option ms-selected="el.key == opSelected"  ms-value="el.key">{{el.name}}</option>
+						</select>
+					</li>
+					
+					-->
+					
+					<li class="media_voice" title="Music Panel" style="display: none;">
+						<b></b>
+					</li>
+					
+					<li class="help_btn" title="Help">
+						<b></b>
+					</li>
+					<!--
+					<li class="notification_btn" ms-click="clickNotiCenter($event)" ms-title="changeLang['NotificationCenter']">
+						<b></b>
+					</li>
+					-->
+					<li class="feedback" title="Feedback">
+						<b></b>
+						<span class="info_count" style="display: none;"><!--{{infoCount}}--></span>
+					</li>
+					
+					<li class="network_type" title="Connection Mode">
+						<b class="zhilian"></b>
+					</li>
+					
+					<li class="logout" title="Logout"><b></b></li>
+				</ul>
+</div>
+				<!-- 
+				compnents				
+				 -->
+				<div id="compnents" class="compnents">
+				<div id="home_container" class="componentContainer" style="display: none;">				<!-- home model -->
+				<div id="home" class="modules home" onselectstart="return false" avalonctrl="home">
+					<div class="img_connect_status"></div>
+					<div class="mobile_info">
+						<div class="mobile_shot">
+							<img id="phoneInfoImg" src="./chapter one_files/img_home_iphone6p.png" alt="">
+							<div class="uploadborder" style="display: none;">
+									<div class="uploadHome" id="uploadHome">
+										<div id="endUploadbar" class="uploadImg">
+											<p class="uploading" style="z-index: 1000;">
+												<span class="fontLeft" style="display: none;">0
+												</span>
+												<span class="loadAbove endText">Uploading</span>
+											</p>
+											
+											<p class="uploadSucc">
+												<span class="loadLow endText">Success</span>
+											</p>
+											
+										</div>
+										
+										<div class="loadBarName">
+											<div class="uploadName" style="display: none;"></div>
+											<!-- <div id="homeUploadProgress" class="subBackgrond" ms-visible="barVisible"> -->
+											<div id="homeUploadProgress" class="subBackgrond" style="display: none;">
+												<div id="subLengthBar" class="bar"></div>
+											</div>
+										</div>
+										<div class="uploadPath">
+											<!--  <p ms-visible="pathVisible"> -->
+											<p style="display: block;">
+											<span>Uploaded</span>
+											<span>0</span>
+											<span>file(s) to</span>
+											<span>:\download</span>
+											</p>
+										</div>
+									</div>
+							</div>
+							<div id="bgUpload" class="bgUpload" style="display: block;">
+								<p class="dragImg"></p>
+								<p class="dragTitle">Drag &amp; drop to transfer</p>
+							</div>
+							
+								<div class="shot_btns">
+									<div id="shot_begin" class="shot_begin">Phone Screen</div>
+									<div id="shot_end" class="shot_end">End</div>
+								</div>
+						</div>
+						<div class="mobile_des">
+							<div class="mobile_name">Iphone7<span>iOS 13.1.3</span></div>
+							
+							<ul id="module_info_list" class="module_info_list" style="width: 280px;">
+								<!--ms-repeat--><!--ms-if--><li class="imgModule_ic"><div class="ic_bg"></div><span>4617</span></li><li class="videoModule_ic"><div class="ic_bg"></div><span>85</span></li><li class="musicModule_ic"><div class="ic_bg"></div><span>63</span></li><li class="docModule_ic"><div class="ic_bg"></div><span>24</span></li><!--ms-if--><!--ms-if--><!--ms-repeat-end-->
+							</ul>
+							<ul id="module_info_list" class="module_info_list msgTelControl">
+								<!--ms-repeat--><!--ms-if--><!--ms-if--><!--ms-if--><!--ms-if--><!--ms-if--><li class="appModule_ic" style="display: none;"><div class="ic_bg"></div><span></span></li><li class="fileModule_ic" style="display: none;"><div class="ic_bg"></div><span></span></li><!--ms-repeat-end-->
+							</ul>
+							
+							<!-- delete by wlm 01.20.2015
+							<ul id="module_info_list" class="module_info_list msgTelControl" id="msgTelControl" ms-controller="msgTelControl" ms-visible="visible_channel">
+								<li style="z-index:5" ms-mouseenter="onMouseenter(this)" ms-mouseleave="onMouseleave(this)">
+									<div class="slide_btns msg_btns">
+										<div id="backupsMsg" class="slide_btn slide_btn_up" ms-click="clickMsgtel(100, $event)" ms-hover="hover"><em id="restore_sms">{{changeLang['backup']}}</em>
+										</div>
+										
+										<div id="reStoreMsg" class="slide_btn slide_btn_down" ms-click="clickRestorMsg($event)" ms-hover="hover"><em id="backup_sms">{{changeLang['restore']}}</em>
+									    	<form target="hideSumbit" action="contactImport" enctype="multipart/form-data" method="post" id="msg_uploads" style="display:none">
+												
+												<input id="imeiMsg" name="imei"/>
+												<input id="mimeMsg" name="mime"/>
+												<input id="pathNameMsg" name="path"/>
+												<input id="restoreMsg_upload"  type="file" name="restorMsg" ms-change="onChangeMsg"  style="display:none"/>
+												
+											</form>
+										</div>
+									</div>
+									<div class="smsModule_ic module_info_bg" ms-click="getInModule(5, 'sms')">
+										<span>{{countInfo.smsModule}}</span>
+									</div>
+									<div id="sms_process" class="backup_process"></div>
+								</li>
+								<li style="z-index:4"  ms-mouseenter="onMouseenter(this)" ms-mouseleave="onMouseleave(this)">
+									<div class="slide_btns tel_btns">
+										<div id="reStoreTel" class="slide_btn slide_btn_up" ms-click="clickMsgtel(101, $event)" ms-hover="hover"><em id="restore_contact">{{changeLang['backup']}}</em>
+										</div>
+										
+										<div id="clickFile" class="slide_btn slide_btn_down" ms-click="clickTel($event)" ms-hover="hover"><em id="backup_contact">{{changeLang['restore']}}</em>
+											<form target="hideSumbit"  action="SMSImport" enctype="multipart/form-data" method="post" id="tel_uploads" style="display:none">
+												
+												<input id="imei" name="imei"/>
+												<input id="mime" name="mime"/>
+												<input id="pathName" name="path"/>
+												<input id="tel_upload"  type="file" name="Filename" ms-change="onChangeTel"  />
+												
+											</form>
+										</div>
+									</div>
+									<div class="contactModule_ic module_info_bg" ms-click="getInModule(5, 'contact')">
+										<span>{{countInfo.contact}}</span>
+									</div>
+									<div id="contact_process" class="backup_process"></div>
+								</li> 
+							</ul>
+							 -->
+							<div class="mobile_space">
+								<div class="RAM_card">
+									<!-- 
+									<div class="RAM_title">内部存储器(可用:851.3MB)</div>
+									 -->
+									 <!-- 
+									<div class="explore_images explore_area" ms-css-width="{{romPercentArray.ph}}"></div>
+									<div class="explore_video explore_area" ms-css-width="{{romPercentArray.vi}}"></div>
+									<div class="explore_music explore_area" ms-css-width="{{romPercentArray.mu}}"></div>
+									<div class="explore_doc explore_area" ms-css-width="{{romPercentArray.doc}}"></div>
+									<div class="explore_apps explore_area" ms-css-width="{{romPercentArray.app}}"></div>
+									<div class="explore_sms explore_area"></div>
+									 -->
+									
+									<div class="explore_used explore_area" style="width: 98.6%;"></div>
+									
+									<div class="explore_left"></div>
+									<div class="explore_right"></div>
+									<div class="RAM_num"><span>Internal Storage: </span>29.37GB/29.79GB</div>
+									<div class="explore_hover">
+										<!-- 
+										<div class="explore_area" ms-css-width="{{romPercentArray.ph}}"></div>
+										<div class="explore_area" ms-css-width="{{romPercentArray.vi}}"></div>
+										<div class="explore_area" ms-css-width="{{romPercentArray.mu}}"></div>
+										<div class="explore_area" ms-css-width="{{romPercentArray.doc}}"></div>
+										<div class="explore_area" ms-css-width="{{romPercentArray.app}}"></div>
+										<div class="explore_area"></div>
+										 -->
+										<div class="explore_area" style="width:100%" title="98.6%"></div>
+									</div>
+								</div>
+								<div class="SD_card" style="display: none;">
+									<!-- 
+									<div class="SD_title">SD卡(可用:851.3MB)</div>
+									 -->
+									<!-- <div class="explore_images explore_area"  ms-css-width="{{SDcardPercentArray.ph}}"></div>
+									<div class="explore_video explore_area" ms-css-width="{{SDcardPercentArray.vi}}"></div>
+									<div class="explore_music explore_area" ms-css-width="{{SDcardPercentArray.mu}}"></div>
+									<div class="explore_doc explore_area" ms-css-width="{{SDcardPercentArray.doc}}"></div>
+									<div class="explore_apps explore_area" ms-css-width="{{SDcardPercentArray.app}}"></div>
+									 -->
+									<div class="explore_sms explore_area" style="width: 0px;"></div>
+									
+									<div class="explore_left"></div>
+									<div class="explore_right"></div>
+									<div class="SD_num"><span>SD Card: </span>/</div>
+									<div class="explore_hover">
+										<!--<div class="explore_area" ms-css-width="{{SDcardPercentArray.ph}}"></div>
+										<div class="explore_area" ms-css-width="{{SDcardPercentArray.vi}}"></div>
+										<div class="explore_area" ms-css-width="{{SDcardPercentArray.mu}}"></div>
+										<div class="explore_area" ms-css-width="{{SDcardPercentArray.doc}}"></div>
+										<div class="explore_area" ms-css-width="{{SDcardPercentArray.app}}"></div>
+										 -->
+										 <div class="explore_area" style="width:100%" title="0"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div></div><div id="imgModule_container" class="componentContainer" style="display: none;">						<!-- image model -->
+					<canvas id="imgCropCanvas" style="display:none"></canvas>
+					 <div id="imgModule" class="imgModule modules" onselectstart="return false" avalonctrl="imgModule">
+						<div class="tab_line">
+							
+							<ul class="img_list_tab list_tab">
+								<li class="current" id="phonePhoto">Camera</li>
+								<li id="photoStore">Gallery</li>
+								
+								
+							</ul>
+							
+							<ul class="list_tab icon_tab" style="display: block;">
+								<li class="time"><b></b></li>
+								<li class="camera"><b></b></li>
+							</ul>
+					
+						</div>
+						<div class="bottom_line"></div>
+						<div id="groupPicList" class="groupPicList" avalonctrl="photoModule" style="height: 541px; display: none; overflow: hidden; padding: 0px; width: 240px;">
+							
+						<div class="jspContainer" style="width: 240px; height: 541px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 240px;"><div>
+								<!--ms-repeat--><!--ms-repeat-end-->
+							</div></div></div></div>
+						
+						<div>
+							
+						</div>
+						
+						<div id="imgModule_file_list" class="img_list" data-step="3" data-intro="2" data-position="top-middle-align" style="height: 541px; margin-left: 0px; display: block;">
+							        <div>
+								    <!--ms-repeat--><!--ms-repeat-end-->
+							        </div>
+							        <div class="empty_list" style="top: 50px; display: none;">
+										<div id="img_message" class="empty_img empty_message" style="background:url(img/imgBg.png) no-repeat"></div>
+									</div>
+						</div>
+						
+						<div class="img_list web_module" style="height: 541px; margin-left: 0px; display: none;">
+							<iframe id="webWallPaperPage" src="./chapter one_files/saved_resource.html" width="100%" height="100%"></iframe>
+						</div>
+						
+						
+						
+						<div class="img_list web_module" style="height: 541px; margin-left: 0px; display: none;">
+							<iframe id="dynWebWallPaperPage" src="./chapter one_files/saved_resource(1).html" width="100%" height="100%"></iframe>
+						</div>
+						
+					</div></div><div id="videoModule_container" class="componentContainer" style="display: none;">				<!-- video model -->
+				<div id="videoModule" class="videoModule modules" onselectstart="return false" avalonctrl="videoModule">
+					<div class="tab_line">
+						<b class="check_box"></b>
+						<span class="select_all_text" style="display: block;">Select All</span>
+						<ul class="img_list_tab list_tab only_one">
+							<li class="current" id="phoneVideo">Videos</li>
+						</ul>
+					</div>
+					<div class="bottom_line"></div>
+							
+					<div id="videoModule_file_list" class="img_list" style="height: 541px; overflow: hidden; padding: 0px; opacity: 0.9; width: 0px;">
+						
+						
+					<div class="jspContainer" style="width: 0px; height: 541px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 0px;"><div>
+							
+							<!--ms-repeat--><div class="icon_list_item img_list_item selected" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/6 underground.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;" class="animMov1">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>6 underground</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/Falling_Inn_Love_(2019)_WEB-DL_high_(fzmovies.net)_9217383c110679220ae6c62ccc602982.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>Falling_Inn_Love_(2019)_WEB-DL_high_(fzmovies.net)_9217383c110679220ae6c62ccc602982</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/Blur.mkv.jpg" style="height: 180px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>Blur</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/The_Son_of_Bigfoot_(Bigfoot_Junior)_(2017)_BluRay_high_(fzmovies.net)-1.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>The_Son_of_Bigfoot_(Bigfoot_Junior)_(2017)_BluRay_high_(fzmovies.net)-1</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/Terminator Dark Fate (2019) (NetNaija.com).mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>Terminator Dark Fate (2019) (NetNaija.com)</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/COUPLE OF DAYS __ PREMIUM NOLLYWOOD MOVIE-1.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>COUPLE OF DAYS __ PREMIUM NOLLYWOOD MOVIE-1</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/Mary_Poppins_Returns_(2018)_BluRay_high_(fzmovies.net)_7298a98ace479a1b8411245a032bd23.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>Mary_Poppins_Returns_(2018)_BluRay_high_(fzmovies.net)_7298a98ace479a1b8411245a032bd23</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/Code_8_(2019)_WEB-DL_high_(fzmovies.net)_a24b63d1a4a188e6f15da29b4af7197a.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>Code_8_(2019)_WEB-DL_high_(fzmovies.net)_a24b63d1a4a188e6f15da29b4af7197a</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/Lucky Day (2019) (NetNaija.com).mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>Lucky Day (2019) (NetNaija.com)</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/sstg-5C157745-7C1E-4FBE-9BA9-B8F441257BB8.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>sstg-5C157745-7C1E-4FBE-9BA9-B8F441257BB8</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/ips-14758D11-0627-481C-916B-0B7F75952B00.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>ips-14758D11-0627-481C-916B-0B7F75952B00</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/VID-20190908-WA0025.mp4.jpg" style="width: 327.273px; height: 180px; margin-left: -73.6364px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>VID-20190908-WA0025</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/africanandslaying-20190919-0001.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>africanandslaying-20190919-0001</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/africanandslaying-20190922-0001.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>africanandslaying-20190922-0001</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/2349097326314_status_481196faf06b42e6a14d400969cf9e41.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>2349097326314_status_481196faf06b42e6a14d400969cf9e41</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/2347084578780_status_fba7d7e7b44c437d9f59c689d889d4a2.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>2347084578780_status_fba7d7e7b44c437d9f59c689d889d4a2</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/_status_VID-20190527-WA0019.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>_status_VID-20190527-WA0019</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/_status_VID-20190905-WA0024.mp4.jpg" style="width: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>_status_VID-20190905-WA0024</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_1536.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_1536</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_1537.MOV.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_1537</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_2453.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_2453</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_2455.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_2455</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/00760528-BDC0-4D20-9E82-AD5777B90242L0001.mp4.jpg" style="width: 180px; height: 319.01px; margin-left: 0px; margin-top: -69.505px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>00760528-BDC0-4D20-9E82-AD5777B90242L0001</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_2606.MP4.jpg" style="width: 180px; height: 325.455px; margin-left: 0px; margin-top: -72.7273px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_2606</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_2621.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_2621</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_2690.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_2690</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_2826.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_2826</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/FullSizeRender.mov.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>FullSizeRender</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_3582.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_3582</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_4222.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_4222</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_4894.MOV.jpg" style="width: 240px; height: 180px; margin-left: -30px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_4894</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/FullSizeRender.mov(1).jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>FullSizeRender</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/FullSizeRender.mov(2).jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>FullSizeRender</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/FullSizeRender.mov(3).jpg" style="width: 320.792px; height: 180px; margin-left: -70.396px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>FullSizeRender</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/8E17AACD-93B7-4F81-A5EC-6D43D05897F4L0001.mp4.jpg" style="width: 320.792px; height: 180px; margin-left: -70.396px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>8E17AACD-93B7-4F81-A5EC-6D43D05897F4L0001</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_5374.MOV.jpg" style="height: 180px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_5374</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_5499.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_5499</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_5595.MP4.jpg" style="width: 180px; height: 319.01px; margin-left: 0px; margin-top: -69.505px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_5595</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_5686.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_5686</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_5774.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_5774</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_5775.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_5775</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_5777.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_5777</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_5778.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_5778</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_5804.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_5804</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/FullSizeRender.mov(4).jpg" style="width: 180px; height: 319.01px; margin-left: 0px; margin-top: -69.505px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>FullSizeRender</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_5895.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_5895</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_5899.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_5899</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_5922.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_5922</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_6249.MOV.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_6249</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_6423.MP4.jpg" style="width: 180px; height: 180px; margin-left: 0px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_6423</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_6623.MOV.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_6623</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_6679.MOV.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_6679</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_6693.MOV.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_6693</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_6695.MOV.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_6695</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_6898.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_6898</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7044.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7044</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/FullSizeRender.mov(5).jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>FullSizeRender</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7098.MP4.jpg" style="width: 180px; height: 354.066px; margin-left: 0px; margin-top: -87.033px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7098</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7097.MP4.jpg" style="width: 180px; height: 354.066px; margin-left: 0px; margin-top: -87.033px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7097</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7133.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7133</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7146.MOV.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7146</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7148.MOV.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7148</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7184.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7184</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7306.MOV.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7306</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7311.MOV.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7311</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7456.MOV.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7456</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7485.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7485</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7506.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7506</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7515.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7515</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_7532.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_7532</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8436.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8436</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8437.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8437</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8438.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8438</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8439.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8439</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/FullSizeRender.mov(6).jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>FullSizeRender</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8475.MOV.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8475</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8476.MP4.jpg" style="width: 180px; height: 320.792px; margin-left: 0px; margin-top: -70.396px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8476</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8517.MP4.jpg" style="width: 180px; height: 319.01px; margin-left: 0px; margin-top: -69.505px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8517</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8550.mp4.jpg" style="width: 319.01px; height: 180px; margin-left: -69.505px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8550</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8551.mp4.jpg" style="width: 319.01px; height: 180px; margin-left: -69.505px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8551</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8563.mp4.jpg" style="width: 319.01px; height: 180px; margin-left: -69.505px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8563</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8564.mp4.jpg" style="width: 319.01px; height: 180px; margin-left: -69.505px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8564</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8623.MP4.jpg" style="width: 180px; height: 218.919px; margin-left: 0px; margin-top: -19.4595px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8623</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8693.MP4.jpg" style="width: 180px; height: 319.01px; margin-left: 0px; margin-top: -69.505px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8693</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><div class="icon_list_item img_list_item" style="width:180px;height:180px">
+								<div class="img_container">
+									<img src="./chapter one_files/IMG_8817.MP4.jpg" style="width: 328.776px; height: 180px; margin-left: -74.3878px; margin-top: 0px;">
+								</div>
+								
+								<div class="video_item_big_btn" style="display:none"></div>
+								
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<div class="videoName" style="display: block;">
+									<p>IMG_8817</p>
+								</div>
+								<dl class="icon_btn_bar">
+									<dd class="download"></dd>
+									<dd class="delete_item" style="display: none;"></dd>
+								</dl>
+							</div><!--ms-repeat-end-->
+							
+						</div></div></div></div>
+					<div class="empty_list" style="top: 25px; display: none;">
+							<div id="img_video" class="empty_img empty_message" style="background:url(img/btn_empty_video.png) no-repeat"></div>
+					 </div>
+				</div>
+
+</div><div id="musicModule_container" class="componentContainer" style="display: none;">				<!-- music model -->				
+				<div id="musicModule" class="musicModule modules" onselectstart="javascript: return false;" avalonctrl="musicModule">
+					<div class="tab_line">
+						<ul class="img_list_tab list_tab only_one">
+							<!--ms-repeat--><li class="selected">Music</li><!--ms-repeat-end-->
+						</ul>
+					</div>
+					<div class="bottom_line"></div>
+					<div id="musicModule_file_list" class="file_list list_container" style="height: 447px; display: block; opacity: 0.95;">
+						<div class="list_head">
+							<div class="list_center" style="width: 762px; display: block;">
+								<ol>
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="music_name orders">
+										<span id="musicName">Music Name</span>
+										<span class="order_down" style="display: none;"></span>
+									</li>
+									<li class="operations"></li>
+									<li class="singer orders">
+										<span id="songer">Artist</span>
+										<span class="order_down" style="display: none;"></span>
+									</li>
+									<li class="duration" id="duration">Duration</li>
+									<li class="format" id="formatMusic">Format</li>
+									<li class="size" id="music_size">Size</li>
+								</ol>
+							</div>
+						</div>
+
+						<div class="uploadTip" id="musicUploadTip" style="display: none;">
+							<div class="subName">
+								<div class="circle"><div class="musicUploadStart"></div></div>
+								<span class="firstspan">Uploading</span>
+								<span id="musicUploadName"> </span>
+								<span> - </span>
+								<span>0</span>
+								<span id="musicUploadLeft">files</span>
+								<span class="closeUpload" style="display:none"></span>
+							</div>
+							
+							<div id="MusicsubProcess" class="subProcess">
+							</div>
+						</div>
+						
+						<div id="list_body" class="list_body" style="overflow: hidden; padding: 0px; height: 401px; width: 0px;">
+							
+						<div class="jspContainer" style="width: 0px; height: 401px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 0px;"><div class="list_center" id="musicListCenter" style="width: 762px; display: block;">
+								<!--ms-repeat--><ul class="">
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>08 Lil Wayne - Mona Lisa (feat. Kendrick Lamar) (NetNaija.com)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Lil Wayne</li>
+									<li class="duration">05:24</li>
+									<li class="format">mp3</li>
+									<li class="size">7.63MB</li>
+								</ul><ul class="">
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>03%20Loyal</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Chris Brown Feat. Lil Wayne &amp; Tyga</li>
+									<li class="duration">04:25</li>
+									<li class="format">mp3</li>
+									<li class="size">4.08MB</li>
+								</ul><ul class="selected">
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>02 Ed Sheeran - South of the Border (feat. Camila Cabello   Cardi B) (NetNa</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Ed Sheeran</li>
+									<li class="duration">03:24</li>
+									<li class="format">mp3</li>
+									<li class="size">4.78MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>01 Ed Sheeran - Beautiful People (feat. Khalid) (NetNaija.com)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Ed Sheeran</li>
+									<li class="duration">03:17</li>
+									<li class="format">mp3</li>
+									<li class="size">4.63MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>6LACK - Worst Luck</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:26</li>
+									<li class="format">mp3</li>
+									<li class="size">4.72MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>6LACK - Unfair (Full Version) (Official Audio)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">00:00</li>
+									<li class="format">mp3</li>
+									<li class="size">3.16KB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>6LACK - Nonchalant (Official Video)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:08</li>
+									<li class="format">mp3</li>
+									<li class="size">4.31MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Ayotomi-2019-12-26_21-56-15.3gpp</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">00:00</li>
+									<li class="format">mp3</li>
+									<li class="size">963.03KB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Akon_Ft_Kizz_Daniel_Take_Your_Place_9jaflaver.com_</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Akon Ft Kizz Daniel</li>
+									<li class="duration">03:47</li>
+									<li class="format">mp3</li>
+									<li class="size">5.33MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Adele - Hello(1)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">04:54</li>
+									<li class="format">mp3</li>
+									<li class="size">4.49MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>ava_max_so_am_i_lyrics_mp3_84095</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:04</li>
+									<li class="format">mp3</li>
+									<li class="size">2.82MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Ariana Grande - Let Me Love You ft. Lil Wayne</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:44</li>
+									<li class="format">mp3</li>
+									<li class="size">5.13MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>BOJ_-_Like_To_Party_ft_Skepta_TeeZee-36NG.ng_</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">BOJ</li>
+									<li class="duration">02:39</li>
+									<li class="format">mp3</li>
+									<li class="size">3.71MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Beyoncé Brown Skin Girl ft. Wizkid, Saint Jhn, Blue Ivy</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">04:10</li>
+									<li class="format">mp3</li>
+									<li class="size">5.72MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>benny blaco, Halsey &amp; Khalid - Eastside (Official Audio)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">02:53</li>
+									<li class="format">mp3</li>
+									<li class="size">3.98MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>bazzi_feat._camila_beautiful_official_video_mp3_58793</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:15</li>
+									<li class="format">mp3</li>
+									<li class="size">2.98MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Cece Winans- Mercy Said No (LYRICS)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">04:59</li>
+									<li class="format">mp3</li>
+									<li class="size">6.89MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>chris_brown_party_ft._gucci_mane_usher_mp3_22613</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">05:02</li>
+									<li class="format">mp3</li>
+									<li class="size">3.46MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Chris Brown - No Guidance (feat. Drake) (NetNaija.com)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Chris Brown</li>
+									<li class="duration">04:20</li>
+									<li class="format">mp3</li>
+									<li class="size">6.04MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>charlie_puth_attention_official_video_mp3_69725</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:51</li>
+									<li class="format">mp3</li>
+									<li class="size">3.54MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>DOWNLOAD HERE - Tems_Looku_Looku_9jaflaver.com_</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Tems</li>
+									<li class="duration">03:47</li>
+									<li class="format">mp3</li>
+									<li class="size">5.33MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Dunsin-Oyekan-IMOLE-DE</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Dunsin Oyekan</li>
+									<li class="duration">06:31</li>
+									<li class="format">mp3</li>
+									<li class="size">6.18MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Davido_Tiwa_Savage_Lola_Rae_Sarkodie_Diamond_And_Mi_Casa_Africa_Rising</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">05:04</li>
+									<li class="format">mp3</li>
+									<li class="size">1.16MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>DMW_Ft_Davido_Mayorkun_And_Dremo_On_God_9jaflaver.com_</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">DMW Ft Davido, Mayorkun, And Dremo</li>
+									<li class="duration">02:47</li>
+									<li class="format">mp3</li>
+									<li class="size">3.96MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Ellie Goulding, Diplo, Swae Lee - Close To Me (Audio)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:04</li>
+									<li class="format">mp3</li>
+									<li class="size">4.22MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Fireboy_DML_Girlfriend_9jaflaver.com_</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Fireboy DML</li>
+									<li class="duration">03:03</li>
+									<li class="format">mp3</li>
+									<li class="size">4.32MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Fight Song - Rachel Platten _ Lyrics(MP3_128K)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">MusicWithMeaning</li>
+									<li class="duration">03:20</li>
+									<li class="format">mp3</li>
+									<li class="size">3.14MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Justin Bieber &amp; Cody Simpson - Home To Mama (Original).</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:23</li>
+									<li class="format">mp3</li>
+									<li class="size">4.65MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>julia_michaels_issues_audio_mp3_31575</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">02:56</li>
+									<li class="format">mp3</li>
+									<li class="size">2.69MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Joyner Lucas &amp; Chris Brown - Just Let Go</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">06:09</li>
+									<li class="format">mp3</li>
+									<li class="size">8.47MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Joyner Lucas &amp; Chris Brown - I Don't Die</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">00:00</li>
+									<li class="format">mp3</li>
+									<li class="size">3.16KB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Jessie Reyez - Figures</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:57</li>
+									<li class="format">mp3</li>
+									<li class="size">5.43MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Jessie Reyez   6LACK - Imported (NetNaija.com)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Jessie Reyez &amp; 6LACK</li>
+									<li class="duration">03:45</li>
+									<li class="format">mp3</li>
+									<li class="size">5.23MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>james_arthur_can_i_be_him_mp3_3713</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">04:11</li>
+									<li class="format">mp3</li>
+									<li class="size">3.83MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>J. Cole - Kevin's Heart</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:20</li>
+									<li class="format">mp3</li>
+									<li class="size">4.59MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Katy Perry - The One That Got Away (Audio)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:48</li>
+									<li class="format">mp3</li>
+									<li class="size">5.23MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Listen below_- Naira Marley – Tesumole - Naira-Marley-–-Tesumole</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Naira Marley</li>
+									<li class="duration">03:28</li>
+									<li class="format">mp3</li>
+									<li class="size">3.23MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Lewis-Capaldi-Someone-You-Loved_OpraDre.com_</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Lewis Capaldi</li>
+									<li class="duration">03:02</li>
+									<li class="format">mp3</li>
+									<li class="size">7.08MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>lion_and_the_lamb-pst__chingtok_ishaku_feat__olumide_iyun,_nathaniel_bassey_trumpet__mobile</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Pastor Chingtok Ishaku/feat. Olumide Iyun, Nathaniel Bassey(Trumpet)</li>
+									<li class="duration">08:23</li>
+									<li class="format">mp3</li>
+									<li class="size">7.72MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>little_mix_touch_audio_mp3_5665</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:35</li>
+									<li class="format">mp3</li>
+									<li class="size">2.46MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Mayorkun-Mama</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Mayorkun</li>
+									<li class="duration">03:18</li>
+									<li class="format">mp3</li>
+									<li class="size">3.82MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>MO   Diplo - Sun in Our Eyes (NetNaija.com)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">MØ &amp; Diplo</li>
+									<li class="duration">03:37</li>
+									<li class="format">mp3</li>
+									<li class="size">5.13MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>maroon_5_sugar_lyrics_mp3_85237</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:52</li>
+									<li class="format">mp3</li>
+									<li class="size">2.66MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>maroon_5_cold_audio_ft._future_mp3_58749</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:49</li>
+									<li class="format">mp3</li>
+									<li class="size">3.50MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>No More You</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:55</li>
+									<li class="format">mp3</li>
+									<li class="size">3.60MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Nicki Minaj - MEGATRON (NetNaija.com)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Nicki Minaj</li>
+									<li class="duration">03:10</li>
+									<li class="format">mp3</li>
+									<li class="size">4.45MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Nicki Minaj - Good Form (feat. Lil Wayne) (NetNaija.com)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Nicki Minaj</li>
+									<li class="duration">03:57</li>
+									<li class="format">mp3</li>
+									<li class="size">5.58MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Nasty C - SMA feat. Rowlene (Official Audio)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">05:15</li>
+									<li class="format">mp3</li>
+									<li class="size">7.21MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>N.E.R.D   Rihanna - Lemon (feat. Drake)  Remix  (NetNaija.com)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">N.E.R.D &amp; Rihanna</li>
+									<li class="duration">03:46</li>
+									<li class="format">mp3</li>
+									<li class="size">4.37MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>post_malone_psycho_ft._ty_dolla_ign_mp3_1552</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:56</li>
+									<li class="format">mp3</li>
+									<li class="size">3.61MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Passenger - Holes lyrics</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:27</li>
+									<li class="format">mp3</li>
+									<li class="size">4.74MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Rudimental   Major Lazer - Let Me Live (feat Anne-Marie Mr Eazi) (NetNai</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Rudimental &amp; Major Lazer</li>
+									<li class="duration">03:25</li>
+									<li class="format">mp3</li>
+									<li class="size">4.92MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Rihanna_Feat_Akon_Emergency_Room</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:49</li>
+									<li class="format">mp3</li>
+									<li class="size">3.50MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>rihanna_consideration_audio_ft._sza_mp3_76836</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">02:41</li>
+									<li class="format">mp3</li>
+									<li class="size">1.84MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Rihanna - Stay ft. Mikky Ekko</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">04:07</li>
+									<li class="format">mp3</li>
+									<li class="size">5.67MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Sean-Paul-x-Anne-Marie-Rockabye-QNobs.com_</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Clean Bandit</li>
+									<li class="duration">04:11</li>
+									<li class="format">mp3</li>
+									<li class="size">7.68MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Shawn_Mendes_Treat_You_Better</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:00</li>
+									<li class="format">mp3</li>
+									<li class="size">2.76MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Sam Smith - How Do You Sleep (Official Video)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:48</li>
+									<li class="format">mp3</li>
+									<li class="size">5.24MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Tope-Alabi-LOGAN-TI-ODE-ft.-TY-Bello-and-George</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">Tope Alabi  ft. TY Bello and George </li>
+									<li class="duration">04:24</li>
+									<li class="format">mp3</li>
+									<li class="size">6.36MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>the_weeknd_starboy_ft._daft_punk_mp3_79176</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">04:33</li>
+									<li class="format">mp3</li>
+									<li class="size">3.13MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Wiz Khalifa - Hopeless Romantic feat. Swae Lee [Official Music Video]</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:52</li>
+									<li class="format">mp3</li>
+									<li class="size">5.32MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>xxxtentacion_-_Changes_(Xienn_Cover)_(Lyric_video)(256k)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">02:09</li>
+									<li class="format">mp3</li>
+									<li class="size">1.98MB</li>
+								</ul><ul>
+									<li class="check_box_con"><div class="checkbox_btn"><b class="check_box"></b></div></li>
+									<li class="music_name orders"><span>Zendaya - Neverland (Lyrics)</span><div class="media_voice_list" style="display: none;"></div></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op audition"><b id="music_op_audition" title="Play"></b></span>
+											<span class="op download"><b id="music_op_download" title="Download"></b></span>
+											<span class="op deleteItem"><b id="music_op_delete" title="Delete"></b></span>
+										</div>
+									</li>
+									<li class="singer orders">unknown</li>
+									<li class="duration">03:42</li>
+									<li class="format">mp3</li>
+									<li class="size">5.09MB</li>
+								</ul><!--ms-repeat-end-->
+							</div></div></div></div>
+						<!-- 空数据页面 -->
+						<div class="empty_list" style="display: none;">
+							<div id="empty_music" class="empty_img empty_music"></div>
+						</div>
+					</div>
+					<!-- 在线音乐  -->
+					<div id="duomi_file_list" class="file_list web_module" style="height: 541px; display: none;">
+						<iframe id="duomiPage" src="./chapter one_files/saved_resource(2).html" width="100%" height="100%"></iframe>
+					</div>
+					<div id="kugou_file_list" class="file_list web_module" style="height: 541px; display: none;">
+						<iframe id="kugouPage" src="./chapter one_files/saved_resource(3).html" width="100%" height="100%"></iframe>
+					</div>
+					
+					<!-- play1 -->
+					<div class="song_panel" onselectstart="return false" style="display: block;">
+						<div id="player_progress" class="jp-progress player_progress">
+							<div id="player_seek_bar" class="player_seek_bar progress_seek_bg">
+								<div id="player_play_bar" class="player_play_bar" style="width: 0%;"></div>
+							</div>
+						</div>
+						
+						<div class="song_info panel_content">
+							<div class="albumImg"></div>
+							<p style="display: block;">
+								<span class="songName">08 Lil Wayne - Mona Lisa (feat. Kendrick Lamar) (NetNaija.com)</span>
+								<span class="singer"><b>Lil Wayne</b></span>
+							</p>
+						</div>
+						
+						<div id="player_container_1" class="player_container panel_content">
+							<div id="jquery_jplayer_1" class="jp-jplayer" style="width: 640px; height: 0px;"><img id="jp_poster_1" style="width: 640px; height: 0px; display: none;"><audio id="jp_audio_1" preload="metadata" src="http://172.20.10.1:33455/static/7E2BF47F-6CBF-4C45-AB59-72FFC8CD5E42/iPodMusic/localFile/08%20Lil%20Wayne%20-%20Mona%20Lisa%20(feat.%20Kendrick%20Lamar)%20(NetNaija.com).mp3"></audio></div>
+							<div id="jp_container_1" class="jp-audio" style="width: 600px; float: right;">
+								<div class="jp-type-single">
+									<div class="jp-gui jp-interface">
+										<ul class="jp-controls" style="width: 560px;">
+											<li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+											<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+											<li><a href="javascript:;" class="jp-pause" tabindex="1" style="display: none;">pause</a></li>
+											<li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+											<!--<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>-->
+											<li><a href="javascript:;" class="jp-mute" tabindex="1" title="Mute">mute</a></li>
+											<li><a href="javascript:;" class="jp-unmute" tabindex="1" style="display: none;" title="Unmute">unmute</a></li>
+											<!--<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>-->
+										</ul>
+										<!-- <div class="jp-progress">
+											<div class="jp-seek-bar">
+												<div class="jp-play-bar"></div>
+											</div>
+										</div> -->
+										<div class="jp-volume-bar">
+											<div class="jp-volume-bar-bg"></div>
+											<div class="jp-volume-bar-value" style="width: 80%;">
+												<div class="jp-volume-bar-circle"></div>
+											</div>
+										</div>
+										<div class="jp-time-holder">
+											<ul class="jp-toggles" style="float:left;">
+												<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="Repeat">repeat</a></li>
+												<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" style="display: none;" title="Repeat off">repeat off</a></li>
+											</ul>
+											<div class="jp-current-time" style="padding-left:30px;display:inline-block;width:auto;line-height:28px;">00:00</div>
+											<div style="width:11px;height:100%;line-height:120%;float:left;text-align:center;line-height:28px;">/</div>
+											<div class="jp-duration" style="float:left;display:inline-block;width:auto;line-height:28px;">05:24</div>
+										</div>
+									</div>
+									<div class="jp-details">
+										<ul>
+											<li><span class="jp-title"></span></li>
+										</ul>
+									</div>
+									<div class="jp-no-solution" style="display: none;">
+										<span>Update Required</span>
+										To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+									</div>
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div><div id="docModule_container" class="componentContainer" style="display: block;">				<!-- document model -->
+				<div id="docModule" class="docModule modules" avalonctrl="docModule" style="height: 595px;">
+					<div id="docModule_file_list" class="file_list list_container" style="height: 595px; display: block;">
+						<div class="list_head">
+							<div class="list_center" style="width: 762px; display: block;">
+								<ol>
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name orders">
+										<span id="doc_list_name">File Name</span>
+										<span class="order_down" style="display: none;"></span>
+									</li>
+									<li class="operations"></li>
+									
+									<li class="size orders">
+										<span id="doc_list_size">Size</span>
+										<span class="order_down" style="display: none;"></span>
+									</li>
+									<li class="modify_time orders">
+										<span class="order_down" style="display: none;"></span>
+										<span id="doc_list_date">Last Modified</span>
+									</li>
+								</ol>
+							</div>
+						</div>
+						<div id="docUploadTip" class="uploadTip" style="display: none; opacity: 0.02; background: rgb(248, 255, 238); border: 1px solid rgb(141, 202, 53);">
+							<div class="subName">
+								<div class="circle" style="border: 1px solid rgb(141, 202, 53);"><div class="uploadSucc" style="top: 0px;"></div></div>
+								<span class="firstspan">Success</span>
+								<span id="docUploadName" style="display: none;"> </span>
+								<span> - </span>
+								<span>1</span>
+								<span id="docUploadLeft">files</span>
+								<span class="closeUpload" style="display:none"></span>
+							</div>
+							
+							<div id="DocsubProcess" class="subProcess" style="width: 0px; background: rgb(76, 175, 80);">
+							</div>
+						</div>
+						
+						<div id="doc_list_body" class="list_body jspScrollable" style="overflow: hidden; padding: 0px; height: 549px; width: 802px;">
+							
+						<div class="jspContainer" style="width: 802px; height: 549px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 797px;"><div class="list_center" id="listCenter" style="width: 762px; display: block;">
+								<!--ms-repeat--><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon pdf_icon"></span><span>billionaire .pdf<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.24MB</li>
+									<li class="modify_time">2019-09-26 9:01:29 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon doc_icon"></span><span>BCH 405 16BC1043.doc<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.08MB</li>
+									<li class="modify_time">2019-09-26 9:01:28 PM</li>
+								</ul><ul class="selected">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon docx_icon"></span><span>CHAPTERS ONE &amp; TWO PROJECT.docx<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.95MB</li>
+									<li class="modify_time">2020-02-11 9:28:04 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon pptx_icon"></span><span>16BC1007 ADETAYO TOLUWALOPE OYINOZA.pptx<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.20MB</li>
+									<li class="modify_time">2019-12-03 2:41:24 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon pdf_icon"></span><span>Glutathione in tb.pdf<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.28MB</li>
+									<li class="modify_time">2019-09-26 9:01:31 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon docx_icon"></span><span>NOLAN.docx<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.03MB</li>
+									<li class="modify_time">2019-10-07 10:51:57 PM</li>
+								</ul><ul class="hover">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon pdf_icon"></span><span>Musiliu Wale.pdf<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.07MB</li>
+									<li class="modify_time">2019-09-26 9:01:31 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon docx_icon"></span><span>Adetayo Tolulope Oyinoza 16BC1007.docx<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.01MB</li>
+									<li class="modify_time">2019-09-26 9:01:28 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon docx_icon"></span><span>Brooke's Angel(1).docx<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.07MB</li>
+									<li class="modify_time">2019-09-26 9:01:29 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon docx_icon"></span><span>NOLAN.docx<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.03MB</li>
+									<li class="modify_time">2019-10-07 10:51:57 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon pptx_icon"></span><span>16BC1007 ADETAYO TOLUWALOPE OYINOZA.pptx<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.20MB</li>
+									<li class="modify_time">2019-12-03 2:41:24 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon pdf_icon"></span><span>Effects_of_reduced_glutathione_therapy_on_chronic_.pdf<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.12MB</li>
+									<li class="modify_time">2019-09-26 9:01:29 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon docx_icon"></span><span>16BC1007 ADETAYO TOLULOPE OYINOZA(1).docx<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.01MB</li>
+									<li class="modify_time">2019-09-26 9:01:28 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon pdf_icon"></span><span>Glutathione 6.pdf<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.54MB</li>
+									<li class="modify_time">2019-09-26 9:01:29 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon docx_icon"></span><span>Brooke's Angel.docx<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.05MB</li>
+									<li class="modify_time">2019-09-26 9:01:29 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon pdf_icon"></span><span>Glutathione 7.pdf<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.72MB</li>
+									<li class="modify_time">2019-09-26 9:01:29 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon pdf_icon"></span><span>Glutathione diabetes.pdf<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.13MB</li>
+									<li class="modify_time">2019-09-26 9:01:29 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon doc_icon"></span><span>billionaire .doc<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.06MB</li>
+									<li class="modify_time">2019-09-26 9:01:28 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon pdf_icon"></span><span>Glutathione 1.pdf<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.26MB</li>
+									<li class="modify_time">2019-09-26 9:01:29 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon docx_icon"></span><span>16BC1007 ADETAYO TOLULOPE OYINOZA.docx<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.01MB</li>
+									<li class="modify_time">2019-09-26 9:01:28 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon pdf_icon"></span><span>Glutathione in rbc.pdf<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.49MB</li>
+									<li class="modify_time">2019-09-26 9:01:30 PM</li>
+								</ul><ul class="">
+									<li class="check_box_con"><b class="check_box"></b></li>
+									<li class="doc_name"><span class="document_icons default_icon pdf_icon"></span><span>Glutathione in cancer.pdf<span></span></span></li>
+									<li class="operations">
+										<div class="op_container">
+											<span class="op deleteItem"><b id="doc_op_delete" title="Delete"></b></span>
+											<span class="op download"><b id="doc_op_download" title="Download"></b></span>
+											<span class="op onlinepreview" style="display: none;"><b id="doc_op_preview" title="Preview"></b></span>
+										</div>
+									</li>
+									<li class="size">0.85MB</li>
+									<li class="modify_time">2019-09-26 9:01:29 PM</li>
+								</ul><!--ms-repeat-end-->
+							</div></div><div class="jspVerticalBar"><div class="jspCap jspCapTop"></div><div class="jspTrack" style="height: 549px;"><div class="jspDrag" style="height: 361px;"><div class="jspDragTop"></div><div class="jspDragBottom"></div></div></div><div class="jspCap jspCapBottom"></div></div></div></div>
+					</div>
+					
+					<!-- 空数据页面 -->
+					<div class="empty_list" style="display: none;">
+						<div id="empty_doc" class="empty_img empty_doc"></div>
+					</div>
+				</div></div><div id="appModule_container" class="componentContainer" style="display: none;">				<!-- image model -->
+				<div id="appModule" class="appModule modules" onselectstart="return false" avalonctrl="appModule">
+					<div class="tab_line">
+						<!--
+						<b class="check_box"></b>
+						<span class="select_all_text">{{seletAll}}</span>
+						-->
+						<ul class="list_tab only_one">
+							<!--ms-repeat--><li class="selected">Apps</li><!--ms-repeat-end-->
+						</ul>
+					</div>
+					<div class="bottom_line"></div>
+					
+					<div id="appModule_file_list" class="icon_list" style="overflow: hidden; padding: 0px; height: 541px; display: block; width: 0px;">
+						
+					<div class="jspContainer" style="width: 0px; height: 541px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 0px;"><div>
+							<!--ms-repeat--><!--ms-repeat-end-->
+						</div></div></div></div>
+					
+					<div id="webAppModule_file_list" class="icon_list web_module" style="height: 541px; display: none;">
+						<!-- <div>
+							<div class="icon_list_item app_list_item" ms-repeat="webAppList" ms-click="clickSelectItem($index, $event)" ms-hover="hover">
+								<div class="icon_container">
+									<img ms-src="{{el.icon}}" />
+									<span class="app_name">{{el.name}}</span>
+									<span>{{el.size}}</span>
+								</div>
+								<div class="icon_checkbox"></div>
+								
+								<div class="icon_btn_bar_bg"></div>
+								<dl class="icon_btn_bar">
+									<dd class="download" ms-click="clickDownload($index, $event)"></dd>
+									<dd class="send_app" ms-click="clickSendFile($index, $event)"></dd>
+								</dl>
+							</div>
+						</div> -->
+						
+						<iframe id="webAppPage" src="./chapter one_files/saved_resource(4).html" width="100%" height="100%"></iframe>
+					</div>
+				</div></div><div id="fileModule_container" class="componentContainer" style="display: none;">				<!-- document model -->
+				<div id="fileModule" class="fileModule modules" avalonctrl="fileModule">
+					<div class="modules_container">
+						<!-- 当前所在路径和搜索框 -->
+						<div class="file_list_head">
+							<!-- 当前路径 -->
+							<div class="current_path">
+								<ul>
+									<li>
+										<span></span>
+										<span class="path_blank" style="display: none;"></span>
+									</li>
+									<!--ms-repeat--><!--ms-repeat-end-->
+									<!-- <li>&gt;</li> -->
+								</ul>
+							</div>
+							<!-- 搜索 -->
+							<div class="search_file">
+								<div class="search_file_input">
+									<input id="searchFileVal" type="text">
+								</div>
+								<div class="search_file_btn downUp">
+								</div>
+							</div>
+						</div>
+						<div class="bottom_line"></div>
+						
+						<!-- 资源管理界面 -->
+						<div id="fileModule_file_list" class="file_list" style="height: 540px;">
+							<!-- 树状列表 -->
+							<div id="file_tree_list" class="file_tree_list" style="overflow: hidden; padding: 0px; height: 490px; width: 260px;">
+								
+							<div class="jspContainer" style="width: 260px; height: 490px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 260px;"><ul class="tree_item_container" style="min-height: 490px;">
+									<li id="/File Category">
+										<div class="tree_root category_close">
+											<div class="category_btn"></div>
+											<div class="category_folder_icon root_icon"></div>
+											<span class="category_folder_name">File Category</span>
+										</div>
+										<ul class="tree_item tree_catetory">
+											<!--ms-repeat--><li id="/File Category/Latest Files">
+												<div class="category_leaf">
+													<div class="category_btn"></div>
+													<div class="category_folder_icon getLastedFileList"></div>
+													<span class="category_folder_name">Latest Files</span>
+												</div>
+											</li><li id="/File Category/Big Files">
+												<div class="category_leaf">
+													<div class="category_btn"></div>
+													<div class="category_folder_icon getBigFileList"></div>
+													<span class="category_folder_name">Big Files</span>
+												</div>
+											</li><li id="/File Category/Compressed Files">
+												<div class="category_leaf">
+													<div class="category_btn"></div>
+													<div class="category_folder_icon getZipFileList"></div>
+													<span class="category_folder_name">Compressed Files</span>
+												</div>
+											</li><li id="/File Category/Install Package">
+												<div class="category_leaf">
+													<div class="category_btn"></div>
+													<div class="category_folder_icon getApkFileList"></div>
+													<span class="category_folder_name">Install Package</span>
+												</div>
+											</li><!--ms-repeat-end-->
+										</ul>
+									</li>
+									
+									<!--ms-repeat--><!--ms-repeat-end-->
+								</ul></div></div></div>
+							<!-- 文件夹内容展示 -->
+							<div id="file_icon_list" class="file_icon_list" style="width: 542px; height: 490px;">
+								<div id="file_item_container" class="file_item_container" style="height: 490px; display: block;">
+									<!--ms-repeat--><!--ms-repeat-end-->
+								</div>
+								
+								<!-- 空数据页面 -->
+								<div class="empty_list" style="display: none;">
+									<div id="empty_file" class="empty_img empty_file"></div>
+								</div>
+							</div>
+							<!-- 当前选中项信息 -->
+							<div class="selected_item_info">
+								<!--<img ms-src="{{(currentItem.isFile == 'true' || currentItem.isFile == undefined) ? 'img/ic_small_document.png' : 'img/ic_small_file.png'}}" ms-visible="currentItem.name != undefined" />-->
+								<div class="selected_icon selected_file_icon" style="display: none;"></div>
+								<ul class="selected_item_des">
+									<li></li>
+									<li></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- 空数据页面 
+					<div class="empty_list" ms-visible="isEmpty">
+						<div id="empty_file" class="empty_img empty_file"></div>
+					</div>
+					-->
+				</div></div></div>
+				</div>
+			
+			<div id="bigImgSend" class="bigShow" style="width: 100%; height: 100%; display: none;" avalonctrl="bigImg"><!-- big image show -->
+			<img id="imgShadow" src="http://172.20.10.1:33455/web/index.html">
+			<img id="bigShowImg" src="http://172.20.10.1:33455/web/index.html">
+		<!--  	<dl id="imgName" class="imgNameShow opacity50" style="display:none">
+				<dd style="width:100%">{{showImg}}</dd>
+			</dl>
+			-->
+			
+		<!-- 	<div id="bigCloseClick" class="downUp bigClose fadeOut"  ms-hover="bigCloseHover" ms-click="clickClose()"></div>--></div>
+			<div id="bigImgClick" class="bigShow" style="width: 100%; height: 100%; display: none;" avalonctrl="bigImgM"><!-- big image show -->
+		
+			
+			
+			<div id="bigLeft" class="bigLeft" style="display: block;">
+				<div class="bigLeft_bg"></div>
+			</div>
+			<div id="bigRight" class="bigRight" style="display: block;">
+				<div class="bigRight_bg"></div>
+			</div>
+			<div style="display:none" id="noShowImg"></div>
+			<img style="display:none" id="thumbImg">
+			<img id="imgShadowClick" style="position:absolute" src="http://172.20.10.1:33455/web/index.html">
+			<img id="bigShowImgClick" style="position: absolute; cursor: url(&quot;srcimg/ic_hand2.gif&quot;), auto;" ms-cursor="movehand" src="http://172.20.10.1:33455/web/index.html">
+			
+			<dl id="img_opClick" class="icon_btn_bar bigImg_bottom_btns">
+				<dd class="bigImgToll zoom_big"></dd>
+				<dd class="bigImgToll zoom_small"></dd>
+				<dd class="bigImgToll rotate_img_left"></dd>
+				<dd class="bigImgToll rotate_img_right"></dd>
+				<dd class="bigImgToll bigImg_download"></dd>
+				<dd class="bigImgToll bigImg_delete" style="display: none;"></dd>
+			</dl>
+			
+			<dl id="imgNameShow" class="imgNameShow">
+				<dd style="width:100% ; line-height:60px;font-size:18px">show</dd>
+			</dl>
+			<div id="bigCloseClick" class="bigClose"></div></div>
+			<div id="music_panel_container" class="music_panel_container boxShow" avalonctrl="musicPanel" style="display: none;">		<!-- music panel -->
+		<!--
+		<div class="music_panel">
+			
+			<div class="panel_arrow"></div>
+			<div class="music_panel_content">
+				<div class="panel_btns" ms-class="{{'panel_btns_' + mediaStatus}}">
+					<div ms-class="{{butName + '_' + mediaStatus}}" ms-hover="hover" ms-mousedown="donwButton($event)" ms-mouseup="upButton($event)" ms-mouseout="outButton($event)"></div>
+				</div>
+				<div class="music_name">{{songName}}</div>
+				<div class="music_singer">{{singer}}</div>
+			</div>
+			
+		</div>
+		-->
+		<div class="feedback_top"></div>
+			<div class="feedback_center">
+				<div class="session_container">
+					<div class="music_panel">
+						<div class="music_panel_content">
+							<div class="panel_btns panel_btns_stop">
+								<div class="panel_btn_stop"></div>
+							</div>
+							<div class="music_name">08 Lil Wayne - Mona Lisa (feat. Kendrick Lamar) (NetNaija.com)</div>
+							<div class="music_singer">Lil Wayne</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="feedback_footer"></div>
+		</div>
+			<div id="feedbackModule" class="feedback_content boxShow" avalonctrl="feedback" style="display: none;">		<!-- feedback -->
+	
+		<div class="feedback_top"></div>
+		<div class="feedback_center">
+			<div class="session_container">
+				<div id="session_list" class="session_list" style="overflow: hidden; padding: 0px; width: 256px;">
+					
+				<div class="jspContainer" style="width: 256px; height: 200px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 256px;"><div>
+						<!--ms-repeat--><!--ms-repeat-end-->
+					</div></div></div></div>
+				<div class="i_want_to_say">
+					<input type="text">
+					<span id="feedback_sub" title="Send"></span>
+				</div>
+			</div>
+		</div>
+		<div class="feedback_footer"></div>
+</div>
+			<div id="video_player" class="video_player" avalonctrl="videoPlayer" style="display: none;">		<!-- play video -->
+		<div class="video_player_close"></div>
+		<div id="jp_container_3" class="jp-video jp-video-360p" style="position:absolute;left:0;top:0;">
+			<div class="jp-type-single">
+				<div id="jquery_jplayer_3" class="jp-jplayer" style="width: 640px; height: 360px;"><img id="jp_poster_0" style="width: 640px; height: 360px; display: none;"><video id="jp_video_0" preload="metadata" style="width: 0px; height: 0px;"></video></div>
+				<div class="jp-gui">
+					<div class="jp-video-play" style="display: none;">
+						<a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
+					</div>
+					<div class="jp-interface">
+						<div class="jp-progress">
+							<div id="v_player_seek_bar" class="player_progress_bg">
+								<div class="player_seek_bar_bg" style="width: 0px;"></div>
+							</div>
+							<div class="jp-seek-bar progress_seek_bg" style="width: 0%;">
+								<div class="jp-play-bar" style="width: 0%;">
+									<div class="jp-video-volume-bar-circle downUp"></div>
+								</div>
+							</div>
+						</div>
+						<div style="clear:both;float:left;height:0px;width:100%;"></div>
+						<div class="jp-current-time" style="position:absolute;left:60px;top:11px;line-height:64px;font-size:14px;">00:00</div>
+						<div style="width:11px;height:100%;line-height:120%;position:absolute;left:120px;top:11px;line-height:64px;text-align:center;font-size:14px;">/</div>
+						<div class="jp-duration" style="position:absolute;left:130px;top:11px;line-height:64px;font-size:14px;">00:00</div>
+						<div class="jp-controls-holder">
+							<ul class="jp-controls">
+								<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+								<li><a href="javascript:;" class="jp-pause" tabindex="1" style="display: none;">pause</a></li>
+								<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+								<li><a href="javascript:;" class="jp-mute" tabindex="1" title="Mute">mute</a></li>
+								<li><a href="javascript:;" class="jp-unmute" tabindex="1" style="display: none;" title="Unmute">unmute</a></li>
+								<li style="display:none"><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+							</ul>
+							<div class="jp-volume-bar">
+								<div class="jp-volume-bar-bg"></div>
+								<div class="jp-volume-bar-value" style="width: 0%;">
+									<div class="jp-volume-bar-circle"></div>
+								</div>
+							</div>
+							<ul class="jp-toggles">
+								<li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="Full screen">full screen</a></li>
+								<li><a href="javascript:;" class="jp-restore-screen" tabindex="1" style="display: none;" title="Restore screen">restore screen</a></li>
+								<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="Repeat">repeat</a></li>
+								<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" style="display: none;" title="Repeat off">repeat off</a></li>
+							</ul>
+						</div>
+						<!-- 
+						<div class="jp-details">
+							<ul>
+								<li><span class="jp-title"></span></li>
+							</ul>
+						</div>
+						 -->
+					</div>
+				</div>
+				<div class="jp-no-solution" style="display: none;">
+					<span>Update Required</span>
+					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+				</div>
+			</div>
+		</div>
+</div>		
+			<div id="tel_phone" class="boxShow" avalonctrl="telPhone" style="display: none;">
+	<div class="feedback_top"></div>
+			<div class="feedback_center">
+				<div class="session_container">
+					<div class="callTitle">
+						<b class="call_icon"></b>
+						<span>Incoming Call</span>
+					</div>
+					<div id="callPhone" class="callPhone">
+						<span class="call_number">联系人:陌生人</span>
+						<span class="call_position"></span>
+					</div>
+					<div class="callPhoneBtns">
+						<div class="btns">
+							<div class="call_answer"></div>
+						</div>
+						<div class="btns">
+							<div class="call_refuse"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="feedback_footer"></div></div>
+			<div id="notificationCenter" class="notificationCenter" avalonctrl="notificationCenter" style="display: none;">		<!-- notification center -->
+	
+		<div class="notiCenterContainer boxShow" style="display: none;">
+			<div class="centerTitle">
+				<span id="centerTitle">Notification Center</span>
+				<div class="clearNotification downUp"></div>
+			</div>
+			<div id="notiListContainer" class="notiListContainer">
+				<ul>
+					<!--ms-repeat--><!--ms-repeat-end-->
+					<li id="nullList" class="nullList" style="display: none;">There is nothing</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="daryl-growl" style="display: none;">
+			<div id="notificationTip" class="notiContainer">
+	            <div id="base"></div>
+	            <div id="line"></div>
+	            <div id="icon">
+	                <img alt="icon" src="http://172.20.10.1:33455/web/index.html">
+	            </div>
+	            <div id="title"></div>
+	            <div id="text"></div>
+           </div>
+		</div></div>
+			<div id="task_manager" class="task_manager_container" avalonctrl="taskManagerController">		<!-- task manager container -->
+		<div class="manager_title">任务管理</div>
+		<div class="manager_list">
+			<div class="task_item">
+				<div class="file_name"></div>
+				<div class="upload_precent">10%</div>
+				<div class="upload_progress_bar"></div>		
+			</div>
+			<div class="task_item">
+				<div class="file_name"></div>
+				<div class="upload_precent">10%</div>
+				<div class="upload_progress_bar"></div>		
+			</div>	
+		</div>
+</div>	
+			<div id="upload" avalonctrl="upload_files"><div id="submit" style="display: none; width: 824px; text-align: center; opacity: 0.6; height: 452px; z-index: 5000; position: absolute; left: 0px; top: 0px; border: 5px solid rgb(76, 175, 80);">
+	<span id="dropName" style="background: rgb(240, 255, 241); color: rgb(76, 175, 80); border: 1px solid rgb(76, 175, 80);">Drag &amp; drop document to upload to phone</span>
+	
+	<form id="pic_uploads" method="post" enctype="multipart/form-data" action="http://172.20.10.1:33455/web/contactImport" target="hideSumbit" style="display:none"><input type="file" name="Filedata" id="modelUpload" multiple="" accept="audio/*"></form>
+</div></div>
+			
+			
+			<div id="connectionType_center" class="notificationCenter connectionType_center" avalonctrl="ctCenter" style="display: none; opacity: 1;">		<!-- connection center -->
+	
+		<div class="notiCenterContainer ctContainer boxShow" style="display: none;">
+			<div class="centerTitle">
+				<span>Direct Link Mode</span>
+			</div>
+			<div class="ctCentent">
+					<div class="ctDescription" style="display: block;">
+						Data usage not needed
+						<br>
+						
+					</div>
+					<div class="ctDescription" style="display: none;">
+						Data usage may be applicable
+						<br>
+						
+					</div>
+			</div>
+		</div>
+
+</div>
+			
+			<div id="myImage" class="imgCrop" ;="" style="left: 453px; top: 132px; display: none;" avalonctrl="imgCrop"><div>
+	<div class="titleImg">
+		<p id="cutConactPic">Set up the picture</p> 
+	</div>
+	<div class="cropContent">
+		<div class="cropContainer">
+			<canvas width="450" height="240" id="canvasCrop" style="position: absolute; cursor: url(&quot;srcimg/ic_hand2.gif&quot;), auto;">
+			</canvas>
+			<canvas id="tempCanvas" width="150" height="150" style="position:absolute:zIndex:9000 ; display:none">
+			</canvas>
+		</div>
+		<div class="soliderClass">
+			<div class="sliderBckaground">	
+			</div>
+			<div id="moveMode" class="slider" style="cursor: url(&quot;srcimg/ic_hand2.gif&quot;), auto;">
+				<div class="sliderMove" id="moveMod">
+				</div>
+			</div>
+		</div>
+		<div class="bottomClass">
+			<div class="buttons buttons_gray" id="cancelCropValue">Cancel</div>
+			<div class="buttons" id="subCropValue">Confirm</div>
+		</div>
+	</div>
+</div></div>
+			
+			<div id="faq" class="faq" ;="" avalonctrl="faq" style="display: none;"><div id="faqP" class="faqP" style="left: 258px; top: 3.5px;">
+	<div class="faq_close">
+	</div>
+	<div class="head">FAQ
+	</div>
+	<hr>
+	<div id="faq_container" class="container">
+		<!--ms-repeat--><!--ms-repeat-end-->
+	</div>
+</div>
+<div class="bgColor">
+</div></div>
+			
+	
+</div>
+			<div id="help_container" class="help_container" avalonctrl="helpModule" style="display: none;">				<!-- help --> 
+				<div class="help_cont" style="display: none;">
+					<!-- <embed ms-src="videoLink" ms-css-width="pageWidth / 2" ms-css-height="pageHeight / 2 - 70 " autostart="true" allowFullScreen="true" quality="high" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed> -->
+					<iframe frameborder="0" allowfullscreen="" src="./chapter one_files/saved_resource(5).html" style="width: 397px; height: 151px;">
+					
+					</iframe>
+					
+					<div class="share_btns">
+						<div class="bdsharebuttonbox">
+							<a href="http://172.20.10.1:33455/web/index.html#" class="bds_more" data-cmd="more"></a>
+							<a href="http://172.20.10.1:33455/web/index.html#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+							<a href="http://172.20.10.1:33455/web/index.html#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+							<a href="http://172.20.10.1:33455/web/index.html#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+							<a href="http://172.20.10.1:33455/web/index.html#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+							<a href="http://172.20.10.1:33455/web/index.html#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+						</div>
+					</div>
+					
+					
+					<div class="close_btn"></div>
+				</div>
+				
+				<div class="help_cont_gp" style="display: block;">
+					<iframe width="100%" height="100%" frameborder="0" allowfullscreen="" src="./chapter one_files/saved_resource(6).html">
+					</iframe>
+				</div>
+	
+</div>
+		</div>
+	   	
+	   	<iframe name="hideSumbit" style="margin:0;border:0;width:0;height:0;display:none;" src="./chapter one_files/saved_resource(7).html"></iframe>
+	   	
+	   	<div id="pdfContainer">	<!-- hqx  pdf-->
+   	<div id="CloseWin" style=" width:100%;height:100%;top:0;left:0;position:absolute;z-index:2000;display:none;opacity:0.3">
+		<div id="ClosePdf" class="ClosePdf" hover="ClosePdfHover" style="display:block;z-index:5000"></div>
+    	<iframe style="width:100%;height:100%;top:0;left:0;position:absolute;z-index:2000;display:block" src="./chapter one_files/saved_resource(8).html" id="pdf_hellod" allowfullscreen=""></iframe>
+	</div>
+</div>
+	   	<div id="shadeWin" style="position:absolute;width:100%;height:100%;z-index:10000;left:0;top:0;background:#444 ;display:none">
+			<div class="panelInner" id="panel">
+					<p id="innerTip" class="innerTip">浏览器不支持</p>	
+			</div>
+		</div>
+	  	<script>
+		  	(function(){
+		  		services = {}
+		  		
+		  		var mcookie= {
+	  				getsec : function(str){
+	  					
+	  					var str1=str.substring(1,str.length)*1;
+	  					   var str2=str.substring(0,1);
+	  					   if (str2=="s")
+	  					   {
+	  					        return str1*1000;
+	  					   }
+	  					   else if (str2=="h")
+	  					   {
+	  					       return str1*60*60*1000;
+	  					   }
+	  					   else if (str2=="d")
+	  					   {
+	  					       return str1*24*60*60*1000;
+	  					   }
+	  					
+	  				},
+	  				
+	  				setCookie: function(name,value ,time){
+	  					
+	  					var Days = 30;
+	  					var exp = new Date();
+	  					exp.setTime(exp.getTime() + Days*24*60*60*1000);
+	  					document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+
+	  					
+	  					var strsec = this.getsec(time);
+	  					var exp = new Date();
+	  					exp.setTime(exp.getTime() + strsec*1);
+	  					document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+	  					
+	  				}	
+		  		};
+		  		
+				var local = window.location.href;
+		  		
+		  		if(local.indexOf('33455') >= 0){
+		  			document.getElementById("loginPanel").style.display ="none";
+		  			
+		  		}else{
+		  			document.getElementById("loginPanel").style.display ="block";
+		  			if(local.indexOf('shanchuan') >= 0){
+		  				mcookie.setCookie('language', 'cn', '7200');
+		  			}
+		  		}
+		  		
+		  		var getIE = function(){
+		  			if(navigator.userAgent.indexOf("MSIE")>0){
+		  				if(navigator.userAgent.indexOf("MSIE 9.0")>0 ||
+		  					navigator.userAgent.indexOf("MSIE 8.0")>0 ||
+		  					navigator.userAgent.indexOf("MSIE 7.0")>0	||
+		  					navigator.userAgent.indexOf("MSIE 6.0")>0){
+		  					
+		  					//var isIE11 = (/Trident\/7\./).test(navigator.userAgent);
+                           
+		  					//if(isIE11) return;
+							
+							
+							
+		  					var getLanguage = function(){
+		  						return (typeof navigator === "undefined" ? "en-us" :
+		                            (navigator.language ||
+		                             navigator.userLanguage || "en-us").toLowerCase())
+		  					}
+		  					
+		  					var allLanguage = {};
+		  					allLanguage["en-us"] = {
+		  						"titleBig":"Please use IE10 or above, or other browsers.",
+		  						"compatible":'Open IE browser, enter Settings, select "Compatibility View Settings", and cancel the selection of "Display intranet sites in Compatibility View" and "Use Microsoft compatibility lists" options'
+		  					}
+		  					
+		  					allLanguage["zh-cn"]={
+		  						"titleBig":"请选择IE10及以上版本或者其他浏览器",
+		  						"compatible":'打开 IE 浏览器，进入设置，选择“兼容性视图设置”，取消“在兼容性视图中显示 Intranet 站点”，及“使用 Microsoft 兼容性列表”选项'
+		  					}
+		  					
+		  					allLanguage["zh-tw"] = {
+		  						"titleBig":"請選擇IE10及以上版本或者其他瀏覽器.",
+		  						"compatible":'打開 IE 流覽器，進入設置，選擇“相容性視圖設置”，取消“在相容性視圖中顯示 Intranet 網站”，及“使用 Microsoft 相容性清單”選項'
+		  					}
+		  					
+		  					allLanguage["es-es"] = {
+		  						"titleBig":"Por favor, utilize o Internet Explorer 10, ou superior, ou algum outro navegador",
+		  						"compatible":'Abra el navegador IE, escriba Configuración, seleccione "Configuración de Mostrar compatibilidad" y desactive "sitios de la intranet de visualización en Vista de compatibilidad" y "utilizar listas de Microsoft Compatibility" opciones'
+		  					}
+		  					
+		  					allLanguage["pt-pt"] = {
+		  						"titleBig":"Por favor, use Internet Explorer 10, o superior, o algún otro navegador.",
+		  						"compatible":'Abra o navegador IE, digite configurações, selecione "Mostrar configurações de compatibilidade" e desmarque a opção "Mostrar em sites de intranet de Exibição de Compatibilidade" e "usar listas Microsoft de compatibilidade" opções'
+		  					}
+
+		  					var s = navigator.userAgent;
+							var idx = s.indexOf('Trident');
+							var v = parseInt(s.substring(idx+8, idx+11));
+
+
+
+		  					if(navigator.userAgent.indexOf("compatible")>0 && v > 5){
+
+		  						document.getElementById("innerTip").innerHTML = allLanguage[getLanguage()]["compatible"];
+
+		  					}else{
+		  						document.getElementById("innerTip").innerHTML = allLanguage[getLanguage()]["titleBig"];
+		  					}
+
+		  					/*
+		  					if(navigator.userAgent.indexOf("compatible")>0 && (navigator.userAgent.indexOf("Trident/7.0") > 0 || navigator.userAgent.indexOf("Trident/10.0") > 0 || navigator.userAgent.indexOf("Trident/6.0") > 0)){
+
+		  						document.getElementById("innerTip").innerHTML = allLanguage[getLanguage()]["compatible"];
+
+							}else{
+								document.getElementById("innerTip").innerHTML = allLanguage[getLanguage()]["titleBig"];
+							}
+							*/
+
+							
+
+		  					document.getElementById("shadeWin").style.display = "block";
+		  					
+		  				}
+		  			}
+		  		}
+		  		getIE();	
+		  		services.setBaseurl = function(baseurl){
+		  			this.baseurl = baseurl.charAt(baseurl.length - 1) === '/' ? baseurl : baseurl+'/';
+		  			//offline mode has a /web/ prefix
+		  			this.baseurl = this.baseurl.replace(/\/web\/$/,'/');
+		  			this.uploadurl = this.baseurl + 'upload'
+		  			this.respImageurl = this.baseurl + 'respImage'
+		  			this.webclienturl = this.baseurl + 'webclient'
+		  		}
+	
+		  		services.setChannelurl = function(channelurl){
+		  			if(channelurl.indexOf('http') == 0){
+		  				this.channelurl = channelurl;
+		  			}
+		  			else{
+			  			this.channelurl = this.baseurl + channelurl;
+		  			}
+		  		} 
+	
+		  		var baseurl = document.location.href.replace(/(http(s?):\/\/.*)\/[^/]*$/,'$1/')
+	
+		  		services.setBaseurl(baseurl)
+		  		
+		  		
+	
+		  	})()
+	  	</script>
+	  	
+	  	<script src="./chapter one_files/main-built_2017_01_04_06_06_04.js.download"></script>
+	
+<div id="debugShow" onselectstart="return true" style="position: absolute; background: #fff; width: 1306px; height: 657px; z-index: 9999999999; top: 0px; left: 60px; display: none; border: 0px black solid; overflow: hidden;"><div id="debug_title" style="border-bottom: 1px black solid;"><input type="button" value="Filter" onclick="Debug.filter();"><input id="debug-filterStr" type="text" style="border:1px solid #ccc;"><input id="sendRequest" text="text" style="border:1px solid #ccc;width:40%;"><input id="debug_onOff" type="button" value="off" style="padding:0 10px"></div><div id="debugShowMessage" style="overflow: auto;height:637px; "></div></div></body></html>
