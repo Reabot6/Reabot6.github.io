@@ -56,8 +56,8 @@ display: block;
     justify-content: space-evenly;
     /* margin: 0 15px; */
 }.navitems li a{
-    font-size: 1.5rem;
-    letter-spacing: 3px;
+    font-size: .8rem;
+    letter-spacing: 2px;
     text-decoration: none;
     color: #7f00ff;
     text-transform: capitalize;
