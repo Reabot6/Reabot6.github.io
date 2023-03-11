@@ -135,18 +135,6 @@
       backDelay: 2000
     });
   }
-  const types = select('.types')
-  if (types) {
-    let types_strings = types.getAttribute('data-typed-items')
-    types_strings = types_strings.split('+')
-    new Typed('.types', {
-      strings: types_strings,
-      loop: false,
-      typeSpeed: 10,
- 
-    });
-  }
-
   /**
    * Skills animation
    */
