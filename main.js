@@ -1,4 +1,4 @@
-prompt ("The code of this website is still being built");
+alert ("The code of this website is still being built");
 (function() {
   "use strict";
 
