@@ -10,7 +10,35 @@
             font-family: 'Arial', sans-serif;
             background-color: #f7f7f7;
         }
+        p{
+            /* Apply styling to all paragraphs */
+p {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 15px;
+}
 
+/* Apply specific styling to paragraphs with a class */
+.special-paragraph {
+    font-weight: bold;
+    color: #e44d26;
+}
+
+/* Apply specific styling to paragraphs within a certain container */
+.container p {
+    margin-bottom: 10px;
+}
+
+/* Responsive styling for paragraphs on smaller screens */
+@media screen and (max-width: 768px) {
+    p {
+        font-size: 14px;
+    }
+        }
+        
+        }
         .gallery {
             display: flex;
             flex-wrap: wrap;
