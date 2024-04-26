@@ -4,45 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Myworld💜</title>
-    <link rel="icon" type="image/x-icon" href="love.png">
-<script src="https://cdn.jsdelivr.net/npm/konva@8.0.0/konva.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/cropperjs/dist/cropper.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 <style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
-        text-align: center;
     }
 
     #puzzle-container {
-        margin: 20px auto;
-        max-width: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+
+    .puzzle-piece {
         border: 2px solid #333;
-        background-color: #fff;
     }
 </style>
 </head>
 <body>
 
-<h1>Upload Image and Solve the Puzzle</h1>
-<input type="file" id="file-input" accept="image/*">
-<div id="puzzle-container"></div>
+<div class="container">
+    <h1 class="text-center my-5">Upload Image and Solve the Puzzle</h1>
+    <input type="file" id="file-input" class="form-control mb-3" accept="image/*">
+    <div id="puzzle-container"></div>
+</div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/konva@8.0.0/konva.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/cropperjs/dist/cropper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/shuffle-array"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/shuffle-array/2.1.0/index.min.js"></script>
 <script>
     const stage = new Konva.Stage({
         container: 'puzzle-container',
-        width: 400,
-        height: 400
+        width: 800,
+        height: 600
     });
 
     const layer = new Konva.Layer();
     stage.add(layer);
 
     const fileInput = document.getElementById('file-input');
-    const shuffleArray = window.ShuffleArray;
 
     fileInput.addEventListener('change', function() {
         const file = this.files[0];
@@ -66,15 +69,15 @@
         const img = new Image();
         img.src = imageSrc;
         img.onload = function() {
-            const pieces = [];
             const pieceWidth = img.width / 4;
             const pieceHeight = img.height / 4;
-            
+
+            const pieces = [];
             for (let row = 0; row < 4; row++) {
                 for (let col = 0; col < 4; col++) {
                     const piece = new Konva.Image({
-                        x: col * pieceWidth + Math.random() * 20 - 10, // Randomize position
-                        y: row * pieceHeight + Math.random() * 20 - 10, // Randomize position
+                        x: col * pieceWidth + Math.random() * 20 - 10,
+                        y: row * pieceHeight + Math.random() * 20 - 10,
                         width: pieceWidth,
                         height: pieceHeight,
                         draggable: true,
@@ -91,34 +94,50 @@
                 }
             }
 
-            layer.draw();
+            shuffleArray(pieces); // Shuffle pieces
 
-            let emptyPiece;
-            pieces.forEach(piece => {
-                piece.on('dragstart', () => {
-                    emptyPiece = piece;
-                });
+            const boxes = [];
+            for (let row = 0; row < 4; row++) {
+                for (let col = 0; col < 4; col++) {
+                    boxes.push({ x: col * pieceWidth, y: row * pieceHeight });
+                }
+            }
+
+            pieces.forEach((piece, index) => {
                 piece.on('dragend', () => {
-                    const closestPiece = pieces.reduce((prev, curr) => {
-                        return (Math.abs(curr.x() - emptyPiece.x()) + Math.abs(curr.y() - emptyPiece.y()) <
-                                Math.abs(prev.x() - emptyPiece.x()) + Math.abs(prev.y() - emptyPiece.y())) ? curr : prev;
-                    });
-                    const tempX = closestPiece.x();
-                    const tempY = closestPiece.y();
-                    closestPiece.position({ x: emptyPiece.x(), y: emptyPiece.y() });
-                    emptyPiece.position({ x: tempX, y: tempY });
+                    const closestBox = findClosestBox(piece, boxes);
+                    const tempX = piece.x();
+                    const tempY = piece.y();
+                    piece.position({ x: closestBox.x, y: closestBox.y });
+                    boxes[index] = { x: tempX, y: tempY };
                     layer.batchDraw();
-                    checkWin();
+                    checkWin(pieces);
                 });
             });
+
+            layer.draw();
         };
     }
 
-    function checkWin() {
-        const pieces = layer.getChildren();
+    function findClosestBox(piece, boxes) {
+        let minDistance = Infinity;
+        let closestBox = null;
+
+        boxes.forEach(box => {
+            const distance = Math.sqrt(Math.pow(piece.x() - box.x, 2) + Math.pow(piece.y() - box.y, 2));
+            if (distance < minDistance) {
+                minDistance = distance;
+                closestBox = box;
+            }
+        });
+
+        return closestBox;
+    }
+
+    function checkWin(pieces) {
         let win = true;
         pieces.forEach((piece, index) => {
-            if (piece.x() !== index % 4 * 100 || piece.y() !== Math.floor(index / 4) * 100) {
+            if (piece.x() !== index % 4 * piece.width() || piece.y() !== Math.floor(index / 4) * piece.height()) {
                 win = false;
             }
         });
