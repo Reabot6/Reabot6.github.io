@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Myworld💜</title>
     <link rel="icon" type="image/x-icon" href="love.png">
-    <style>
+<script src="https://cdn.jsdelivr.net/npm/konva@8.0.0/konva.min.js"></script>
+<style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
@@ -14,20 +15,9 @@
 
     #puzzle-container {
         margin: 20px auto;
-        display: flex;
-        flex-wrap: wrap;
         max-width: 800px;
         border: 2px solid #333;
         background-color: #fff;
-    }
-
-    .puzzle-piece {
-        width: 100px;
-        height: 100px;
-        border: 1px solid #333;
-        box-sizing: border-box;
-        background-size: cover;
-        cursor: pointer;
     }
 </style>
 </head>
@@ -38,8 +28,16 @@
 <div id="puzzle-container"></div>
 
 <script>
+    const stage = new Konva.Stage({
+        container: 'puzzle-container',
+        width: 400,
+        height: 400
+    });
+
+    const layer = new Konva.Layer();
+    stage.add(layer);
+
     const fileInput = document.getElementById('file-input');
-    const puzzleContainer = document.getElementById('puzzle-container');
 
     fileInput.addEventListener('change', function() {
         const file = this.files[0];
@@ -54,54 +52,64 @@
     });
 
     function createPuzzle(imageSrc) {
-        puzzleContainer.innerHTML = '';
+        layer.destroyChildren();
 
         const img = new Image();
-        img.src = imageSrc;
         img.onload = function() {
-            const width = img.width;
-            const height = img.height;
-            const pieceWidth = width / 4;
-            const pieceHeight = height / 4;
+            const pieces = [];
+            const pieceWidth = img.width / 4;
+            const pieceHeight = img.height / 4;
+            
+            for (let row = 0; row < 4; row++) {
+                for (let col = 0; col < 4; col++) {
+                    const piece = new Konva.Image({
+                        x: col * pieceWidth,
+                        y: row * pieceHeight,
+                        image: img,
+                        width: pieceWidth,
+                        height: pieceHeight,
+                        crop: {
+                            x: col * pieceWidth,
+                            y: row * pieceHeight,
+                            width: pieceWidth,
+                            height: pieceHeight
+                        },
+                        draggable: true
+                    });
+                    pieces.push(piece);
+                    layer.add(piece);
+                }
+            }
 
-            for (let i = 0; i < 16; i++) {
-                const piece = document.createElement('div');
-                piece.classList.add('puzzle-piece');
-                piece.style.backgroundImage = `url('${imageSrc}')`;
-                piece.style.backgroundPosition = `-${pieceWidth * (i % 4)}px -${pieceHeight * Math.floor(i / 4)}px`;
-                piece.style.order = i + 1;
-                piece.addEventListener('click', () => {
-                    movePiece(piece);
+            layer.draw();
+
+            let emptyPiece;
+            pieces.forEach(piece => {
+                piece.on('dragstart', () => {
+                    emptyPiece = piece;
+                });
+                piece.on('dragend', () => {
+                    const closestPiece = pieces.reduce((prev, curr) => {
+                        return (Math.abs(curr.x() - emptyPiece.x()) + Math.abs(curr.y() - emptyPiece.y()) <
+                                Math.abs(prev.x() - emptyPiece.x()) + Math.abs(prev.y() - emptyPiece.y())) ? curr : prev;
+                    });
+                    const tempX = closestPiece.x();
+                    const tempY = closestPiece.y();
+                    closestPiece.position({ x: emptyPiece.x(), y: emptyPiece.y() });
+                    emptyPiece.position({ x: tempX, y: tempY });
+                    layer.batchDraw();
                     checkWin();
                 });
-                puzzleContainer.appendChild(piece);
-            }
+            });
         };
-    }
-
-    function movePiece(piece) {
-        const emptyPiece = document.querySelector('.empty');
-        if (canMove(piece, emptyPiece)) {
-            const tempOrder = piece.style.order;
-            piece.style.order = emptyPiece.style.order;
-            emptyPiece.style.order = tempOrder;
-        }
-    }
-
-    function canMove(piece, emptyPiece) {
-        const pieceOrder = parseInt(piece.style.order);
-        const emptyOrder = parseInt(emptyPiece.style.order);
-        return (pieceOrder === emptyOrder - 1 && emptyOrder % 4 !== 0) ||
-               (pieceOrder === emptyOrder + 1 && pieceOrder % 4 !== 0) ||
-               pieceOrder === emptyOrder - 4 ||
-               pieceOrder === emptyOrder + 4;
+        img.src = imageSrc;
     }
 
     function checkWin() {
-        const pieces = document.querySelectorAll('.puzzle-piece');
+        const pieces = layer.getChildren();
         let win = true;
         pieces.forEach((piece, index) => {
-            if (parseInt(piece.style.order) !== index + 1) {
+            if (piece.x() !== index % 4 * 100 || piece.y() !== Math.floor(index / 4) * 100) {
                 win = false;
             }
         });
