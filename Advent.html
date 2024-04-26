@@ -4,145 +4,159 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Myworld💜</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@3.0.5/dist/tailwind.min.css">
 <style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
     }
 
-    #puzzle-container {
+    .container {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 80vh;
+        height: 100vh;
     }
 
     .puzzle-piece {
         border: 2px solid #333;
+    }
+
+    .congrats {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #fff;
+        border: 2px solid #333;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
     }
 </style>
 </head>
 <body>
 
 <div class="container">
-    <h1 class="text-center my-5">Upload Image and Solve the Puzzle</h1>
-    <input type="file" id="file-input" class="form-control mb-3" accept="image/*">
     <div id="puzzle-container"></div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.js"></script>
+<div id="congrats" class="congrats">
+    <h2 class="text-xl font-bold mb-3">Congratulations!</h2>
+    <p class="text-lg">You solved the puzzle!</p>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/konva@8.0.0/konva.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/shuffle-array/2.1.0/index.min.js"></script>
 <script>
     const stage = new Konva.Stage({
         container: 'puzzle-container',
-        width: 800,
+        width: 600,
         height: 600
     });
 
     const layer = new Konva.Layer();
     stage.add(layer);
 
-    const fileInput = document.getElementById('file-input');
+    const pieces = [];
 
-    fileInput.addEventListener('change', function() {
-        const file = this.files[0];
-        if (file) {
-            if (!file.type.match('image.*')) {
-                alert('Please upload an image file.');
-                return;
+    const img = new Image();
+    img.onload = function() {
+        const pieceWidth = img.width / 4;
+        const pieceHeight = img.height / 4;
+
+        const initialPositions = [];
+        for (let row = 0; row < 4; row++) {
+            for (let col = 0; col < 4; col++) {
+                initialPositions.push({ x: col * pieceWidth, y: row * pieceHeight });
             }
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const imageSrc = e.target.result;
-                createPuzzle(imageSrc);
-            };
-            reader.readAsDataURL(file);
+        }
+
+        for (let row = 0; row < 4; row++) {
+            for (let col = 0; col < 4; col++) {
+                const piece = new Konva.Image({
+                    x: initialPositions[row * 4 + col].x + Math.random() * 20 - 10,
+                    y: initialPositions[row * 4 + col].y + Math.random() * 20 - 10,
+                    width: pieceWidth,
+                    height: pieceHeight,
+                    draggable: true,
+                    image: img,
+                    crop: {
+                        x: col * pieceWidth,
+                        y: row * pieceHeight,
+                        width: pieceWidth,
+                        height: pieceHeight
+                    }
+                });
+                piece.initialX = initialPositions[row * 4 + col].x;
+                piece.initialY = initialPositions[row * 4 + col].y;
+                pieces.push(piece);
+                layer.add(piece);
+            }
+        }
+
+        layer.draw();
+    };
+    img.src = 'your-image-url.jpg';
+
+    let isDragging = false;
+    let draggedPiece = null;
+
+    stage.on('dragstart', function(e) {
+        isDragging = true;
+        draggedPiece = e.target;
+        draggedPiece.moveToTop();
+    });
+
+    stage.on('dragend', function(e) {
+        if (isDragging) {
+            isDragging = false;
+            const closestPiece = findClosestPiece(e.target);
+            if (closestPiece) {
+                swapPieces(e.target, closestPiece);
+                checkWin();
+            } else {
+                e.target.position({ x: e.target.initialX, y: e.target.initialY });
+                layer.batchDraw();
+            }
         }
     });
 
-    function createPuzzle(imageSrc) {
-        layer.destroyChildren();
-
-        const img = new Image();
-        img.src = imageSrc;
-        img.onload = function() {
-            const pieceWidth = img.width / 4;
-            const pieceHeight = img.height / 4;
-
-            const pieces = [];
-            for (let row = 0; row < 4; row++) {
-                for (let col = 0; col < 4; col++) {
-                    const piece = new Konva.Image({
-                        x: col * pieceWidth + Math.random() * 20 - 10,
-                        y: row * pieceHeight + Math.random() * 20 - 10,
-                        width: pieceWidth,
-                        height: pieceHeight,
-                        draggable: true,
-                        image: img,
-                        crop: {
-                            x: col * pieceWidth,
-                            y: row * pieceHeight,
-                            width: pieceWidth,
-                            height: pieceHeight
-                        }
-                    });
-                    pieces.push(piece);
-                    layer.add(piece);
-                }
-            }
-
-            shuffleArray(pieces); // Shuffle pieces
-
-            const boxes = [];
-            for (let row = 0; row < 4; row++) {
-                for (let col = 0; col < 4; col++) {
-                    boxes.push({ x: col * pieceWidth, y: row * pieceHeight });
-                }
-            }
-
-            pieces.forEach((piece, index) => {
-                piece.on('dragend', () => {
-                    const closestBox = findClosestBox(piece, boxes);
-                    const tempX = piece.x();
-                    const tempY = piece.y();
-                    piece.position({ x: closestBox.x, y: closestBox.y });
-                    boxes[index] = { x: tempX, y: tempY };
-                    layer.batchDraw();
-                    checkWin(pieces);
-                });
-            });
-
-            layer.draw();
-        };
-    }
-
-    function findClosestBox(piece, boxes) {
+    function findClosestPiece(piece) {
         let minDistance = Infinity;
-        let closestBox = null;
+        let closestPiece = null;
 
-        boxes.forEach(box => {
-            const distance = Math.sqrt(Math.pow(piece.x() - box.x, 2) + Math.pow(piece.y() - box.y, 2));
-            if (distance < minDistance) {
-                minDistance = distance;
-                closestBox = box;
+        pieces.forEach(otherPiece => {
+            if (piece !== otherPiece) {
+                const distance = Math.sqrt(Math.pow(piece.x() - otherPiece.x(), 2) + Math.pow(piece.y() - otherPiece.y(), 2));
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestPiece = otherPiece;
+                }
             }
         });
 
-        return closestBox;
+        return closestPiece;
     }
 
-    function checkWin(pieces) {
+    function swapPieces(piece1, piece2) {
+        const tempX = piece1.x();
+        const tempY = piece1.y();
+        piece1.position({ x: piece2.x(), y: piece2.y() });
+        piece2.position({ x: tempX, y: tempY });
+        layer.batchDraw();
+    }
+
+    function checkWin() {
         let win = true;
-        pieces.forEach((piece, index) => {
-            if (piece.x() !== index % 4 * piece.width() || piece.y() !== Math.floor(index / 4) * piece.height()) {
+        pieces.forEach(piece => {
+            if (piece.x() !== piece.initialX || piece.y() !== piece.initialY) {
                 win = false;
             }
         });
         if (win) {
-            alert('Congratulations! You solved the puzzle!');
+            document.getElementById('congrats').style.display = 'block';
         }
     }
 </script>
