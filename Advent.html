@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Myworld💜r</title>
-<link rel="stylesheet" href="https://unpkg.com/tailwindcss@3.0.5/dist/tailwind.min.css">
+<title>MyWorld💜</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -48,7 +48,7 @@
     <p class="text-lg">You solved the puzzle!</p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/konva@8.0.0/konva.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/konva/8.0.1/konva.min.js"></script>
 <script>
     const stage = new Konva.Stage({
         container: 'puzzle-container',
@@ -95,6 +95,8 @@
                 layer.add(piece);
             }
         }
+
+        shuffleArray(pieces); // Shuffle pieces
 
         layer.draw();
     };
