@@ -5,186 +5,112 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Myworld💜</title>
     <link rel="icon" type="image/x-icon" href="love.png">
-
-<style>
+    <style>
     body {
-        margin: 0;
-        padding: 0;
         font-family: Arial, sans-serif;
-        background-color: #6a0dad; /* Purple background */
-    }
-
-    .navbar {
-        background-color: #4b0082; /* Dark purple navbar */
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-    }
-
-    .navbar a {
-        color: white;
+        background-color: #f0f0f0;
         text-align: center;
-        padding: 10px 20px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-        position: relative; /* Needed for dropdown positioning */
     }
 
-    .navbar a:hover {
-        background-color: #800080; /* Hover color */
-    }
-
-    .dropdown {
-        position: relative;
-        display:block;
-    }
-
-    .dropdown-content {
-        
-        position: absolute;
-        background-color: #4b0082; /* Dark purple background */
-        min-width: 160px;
-        z-index: 1;
-        animation: dropdownAppear 0.3s ease forwards;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block; /* Show dropdown on hover */
-        animation: dropdownAppear 0.3s ease forwards;
-    }
-
-    @keyframes dropdownAppear {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes dropdownDisappear {
-        from { opacity: 1; transform: translateY(0); }
-        to { opacity: 0; transform: translateY(-10px); }
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block; /* Show dropdown on hover */
-        animation: dropdownAppear 0.3s ease forwards;
-    }
-
-    .dropdown:hover .dropdown-content {
-        animation: dropdownDisappear 0.3s ease forwards;
-    }
-
-    .dropdown-content a {
-        color: white;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-    }
-
-    .container {
+    #puzzle-container {
+        margin: 20px auto;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        height: calc(100vh - 50px);
+        max-width: 800px;
+        border: 2px solid #333;
+        background-color: #fff;
     }
 
-    canvas {
-        border: 2px solid #fff; /* White border for canvas */
-        cursor: crosshair;
-        object-fit: contain; /* Fit image within canvas */
-        width: 100%;
-        height: 100%;
+    .puzzle-piece {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #333;
+        box-sizing: border-box;
+        background-size: cover;
+        cursor: pointer;
     }
 </style>
 </head>
 <body>
 
-<div class="navbar">
-    <div class="dropdown">
-        <a href="#" class="dropbtn"><img src="dropdown-icon.png" alt="Dropdown Icon" style="height: 20px; width: 20px;"></a>
-        <div class="dropdown-content">
-            <a href="#" id="input1">Input 1</a>
-            <a href="#" id="input2">Input 2</a>
-            <a href="#" id="input3">Input 3</a>
-            <a href="#" id="input4">Input 4</a>
-            <a href="#" id="input5">Input 5</a>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <canvas id="canvas" width="600" height="400"></canvas>
-</div>
+<h1>Upload Image and Solve the Puzzle</h1>
+<input type="file" id="file-input">
+<div id="puzzle-container"></div>
 
 <script>
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
+    const fileInput = document.getElementById('file-input');
+    const puzzleContainer = document.getElementById('puzzle-container');
 
-    const images = {
-        input1: 'World1.jpg',
-        input2: 'World2.jpg',
-        input3: 'World3.jpg',
-        input4: 'Ehi4.jpg',
-        input5: 'World5.jpg'
-    };
+    fileInput.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageSrc = e.target.result;
+                createPuzzle(imageSrc);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
 
-    // Draw image on canvas when clicked
-    function drawImageOnCanvas(imageSrc) {
+    function createPuzzle(imageSrc) {
+        puzzleContainer.innerHTML = '';
+
         const img = new Image();
         img.src = imageSrc;
         img.onload = function() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            const width = img.width;
+            const height = img.height;
+            const pieceWidth = width / 4;
+            const pieceHeight = height / 4;
+
+            for (let i = 0; i < 16; i++) {
+                const piece = document.createElement('div');
+                piece.classList.add('puzzle-piece');
+                piece.style.backgroundImage = `url('${imageSrc}')`;
+                piece.style.backgroundPosition = `-${pieceWidth * (i % 4)}px -${pieceHeight * Math.floor(i / 4)}px`;
+                piece.style.order = i + 1;
+                piece.addEventListener('click', () => {
+                    movePiece(piece);
+                    checkWin();
+                });
+                puzzleContainer.appendChild(piece);
+            }
         };
     }
 
-    // Celebration effect
-    function celebrate() {
-        const particles = [];
-        for (let i = 0; i < 100; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                size: Math.random() * 5 + 1,
-                color: '#fff',
-                speedX: Math.random() * 3 - 1.5,
-                speedY: Math.random() * 3 - 1.5
-            });
+    function movePiece(piece) {
+        const emptyPiece = document.querySelector('.empty');
+        if (canMove(piece, emptyPiece)) {
+            const tempOrder = piece.style.order;
+            piece.style.order = emptyPiece.style.order;
+            emptyPiece.style.order = tempOrder;
         }
-
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(particle => {
-                ctx.fillStyle = particle.color;
-                ctx.fillRect(particle.x, particle.y, particle.size, particle.size);
-                particle.x += particle.speedX;
-                particle.y += particle.speedY;
-            });
-        }
-
-        function update() {
-            draw();
-            requestAnimationFrame(update);
-        }
-
-        update();
     }
 
-    // Add click event listener to navbar links
-    const navbarLinks = document.querySelectorAll('.navbar a');
-    navbarLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            const inputId = link.getAttribute('id');
-            const imageSrc = images[inputId];
-            if (imageSrc) {
-                drawImageOnCanvas(imageSrc);
-                if (inputId === 'input4') {
-                    celebrate();
-                }
+    function canMove(piece, emptyPiece) {
+        const pieceOrder = parseInt(piece.style.order);
+        const emptyOrder = parseInt(emptyPiece.style.order);
+        return (pieceOrder === emptyOrder - 1 && emptyOrder % 4 !== 0) ||
+               (pieceOrder === emptyOrder + 1 && pieceOrder % 4 !== 0) ||
+               pieceOrder === emptyOrder - 4 ||
+               pieceOrder === emptyOrder + 4;
+    }
+
+    function checkWin() {
+        const pieces = document.querySelectorAll('.puzzle-piece');
+        let win = true;
+        pieces.forEach((piece, index) => {
+            if (parseInt(piece.style.order) !== index + 1) {
+                win = false;
             }
         });
-    });
+        if (win) {
+            alert('Congratulations! You solved the puzzle!');
+        }
+    }
 </script>
 
 </body>
 </html>
+
