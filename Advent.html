@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyWorld💜</title>
+<title>Puzzle Game</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
 <style>
     body {
@@ -75,9 +75,15 @@
 
         for (let row = 0; row < 4; row++) {
             for (let col = 0; col < 4; col++) {
+                let x, y;
+                do {
+                    x = initialPositions[row * 4 + col].x + Math.random() * 20 - 10;
+                    y = initialPositions[row * 4 + col].y + Math.random() * 20 - 10;
+                } while (pieces.some(piece => isColliding(piece, { x, y })));
+
                 const piece = new Konva.Image({
-                    x: initialPositions[row * 4 + col].x + Math.random() * 20 - 10,
-                    y: initialPositions[row * 4 + col].y + Math.random() * 20 - 10,
+                    x,
+                    y,
                     width: pieceWidth,
                     height: pieceHeight,
                     draggable: true,
@@ -124,6 +130,32 @@
             }
         }
     });
+
+    function isColliding(piece, newPos) {
+        const rect1 = {
+            x: newPos.x,
+            y: newPos.y,
+            width: piece.width(),
+            height: piece.height()
+        };
+        return pieces.some(otherPiece => {
+            if (piece !== otherPiece) {
+                const rect2 = {
+                    x: otherPiece.x(),
+                    y: otherPiece.y(),
+                    width: otherPiece.width(),
+                    height: otherPiece.height()
+                };
+                return (
+                    rect1.x < rect2.x + rect2.width &&
+                    rect1.x + rect1.width > rect2.x &&
+                    rect1.y < rect2.y + rect2.height &&
+                    rect1.y + rect1.height > rect2.y
+                );
+            }
+            return false;
+        });
+    }
 
     function findClosestPiece(piece) {
         let minDistance = Infinity;
