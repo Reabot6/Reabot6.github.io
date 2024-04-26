@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Purple Image Gallery</title>
+<title>Myworld</title>
 <style>
     body {
         margin: 0;
@@ -32,16 +32,42 @@
         background-color: #800080; /* Hover color */
     }
 
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
     .dropdown-content {
         display: none;
         position: absolute;
         background-color: #4b0082; /* Dark purple background */
         min-width: 160px;
         z-index: 1;
+        animation: dropdownAppear 0.3s ease forwards;
     }
 
     .dropdown:hover .dropdown-content {
         display: block; /* Show dropdown on hover */
+        animation: dropdownAppear 0.3s ease forwards;
+    }
+
+    @keyframes dropdownAppear {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes dropdownDisappear {
+        from { opacity: 1; transform: translateY(0); }
+        to { opacity: 0; transform: translateY(-10px); }
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block; /* Show dropdown on hover */
+        animation: dropdownAppear 0.3s ease forwards;
+    }
+
+    .dropdown:hover .dropdown-content {
+        animation: dropdownDisappear 0.3s ease forwards;
     }
 
     .dropdown-content a {
@@ -63,6 +89,9 @@
     canvas {
         border: 2px solid #fff; /* White border for canvas */
         cursor: crosshair;
+        object-fit: contain; /* Fit image within canvas */
+        width: 100%;
+        height: 100%;
     }
 </style>
 </head>
@@ -70,7 +99,7 @@
 
 <div class="navbar">
     <div class="dropdown">
-        <a href="#" class="dropbtn">Select Input</a>
+        <a href="#" class="dropbtn"><img src="dropdown-icon.png" alt="Dropdown Icon" style="height: 20px; width: 20px;"></a>
         <div class="dropdown-content">
             <a href="#" id="input1">Input 1</a>
             <a href="#" id="input2">Input 2</a>
@@ -107,6 +136,38 @@
         };
     }
 
+    // Celebration effect
+    function celebrate() {
+        const particles = [];
+        for (let i = 0; i < 100; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 5 + 1,
+                color: '#fff',
+                speedX: Math.random() * 3 - 1.5,
+                speedY: Math.random() * 3 - 1.5
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(particle => {
+                ctx.fillStyle = particle.color;
+                ctx.fillRect(particle.x, particle.y, particle.size, particle.size);
+                particle.x += particle.speedX;
+                particle.y += particle.speedY;
+            });
+        }
+
+        function update() {
+            draw();
+            requestAnimationFrame(update);
+        }
+
+        update();
+    }
+
     // Add click event listener to navbar links
     const navbarLinks = document.querySelectorAll('.navbar a');
     navbarLinks.forEach(link => {
@@ -115,6 +176,9 @@
             const imageSrc = images[inputId];
             if (imageSrc) {
                 drawImageOnCanvas(imageSrc);
+                if (inputId === 'input4') {
+                    celebrate();
+                }
             }
         });
     });
