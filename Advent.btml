@@ -1,0 +1,57 @@
+<Doctype html>
+
+  <form id="navbar-form">
+    <input type="text" name="input1" placeholder="Input 1">
+    <input type="text" name="input2" placeholder="Input 2">
+    <input type="text" name="input3" placeholder="Input 3">
+    <input type="text" name="input4" placeholder="Input 4">
+    <button type="submit">Submit</button>
+  </form>
+  <div class="tv-screen">
+    <div class="screen"></div>
+  </div>
+</nav>
+```
+<style>
+```
+.tv-screen {
+  border: 1px solid black;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+```</style>
+<script>
+```
+const form = document.getElementById('navbar-form');
+const screen = document.querySelector('.screen');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const input1 = document.getElementsByName('input1')[0].value;
+  const input2 = document.getElementsByName('input2')[0].value;
+  const input3 = document.getElementsByName('input3')[0].value;
+  const input4 = document.getElementsByName('input4')[0].value;
+  
+  // Print pictures to TV screen
+  screen.innerHTML = `
+    <img src="${input1}" width="25%">
+    <img src="${input2}" width="25%">
+    <img src="${input3}" width="25%">
+    <img src="${input4}" width="25%">
+  `;
+});
+</script>
+</html>
