@@ -6,6 +6,7 @@
 <title>Myworld💜</title>
     <link rel="icon" type="image/x-icon" href="love.png">
 <script src="https://cdn.jsdelivr.net/npm/konva@8.0.0/konva.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/cropperjs/dist/cropper.min.css" rel="stylesheet">
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -24,9 +25,12 @@
 <body>
 
 <h1>Upload Image and Solve the Puzzle</h1>
-<input type="file" id="file-input">
+<input type="file" id="file-input" accept="image/*">
 <div id="puzzle-container"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/konva@8.0.0/konva.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cropperjs/dist/cropper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/shuffle-array"></script>
 <script>
     const stage = new Konva.Stage({
         container: 'puzzle-container',
@@ -38,10 +42,15 @@
     stage.add(layer);
 
     const fileInput = document.getElementById('file-input');
+    const shuffleArray = window.ShuffleArray;
 
     fileInput.addEventListener('change', function() {
         const file = this.files[0];
         if (file) {
+            if (!file.type.match('image.*')) {
+                alert('Please upload an image file.');
+                return;
+            }
             const reader = new FileReader();
             reader.onload = function(e) {
                 const imageSrc = e.target.result;
@@ -55,6 +64,7 @@
         layer.destroyChildren();
 
         const img = new Image();
+        img.src = imageSrc;
         img.onload = function() {
             const pieces = [];
             const pieceWidth = img.width / 4;
@@ -63,18 +73,18 @@
             for (let row = 0; row < 4; row++) {
                 for (let col = 0; col < 4; col++) {
                     const piece = new Konva.Image({
-                        x: col * pieceWidth,
-                        y: row * pieceHeight,
-                        image: img,
+                        x: col * pieceWidth + Math.random() * 20 - 10, // Randomize position
+                        y: row * pieceHeight + Math.random() * 20 - 10, // Randomize position
                         width: pieceWidth,
                         height: pieceHeight,
+                        draggable: true,
+                        image: img,
                         crop: {
                             x: col * pieceWidth,
                             y: row * pieceHeight,
                             width: pieceWidth,
                             height: pieceHeight
-                        },
-                        draggable: true
+                        }
                     });
                     pieces.push(piece);
                     layer.add(piece);
@@ -102,7 +112,6 @@
                 });
             });
         };
-        img.src = imageSrc;
     }
 
     function checkWin() {
@@ -121,4 +130,3 @@
 
 </body>
 </html>
-
