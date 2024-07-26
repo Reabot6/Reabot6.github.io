@@ -291,3 +291,20 @@ button:hover {
 .hidden {
     animation: fadeOut 0.3s forwards;
 }
+/* Existing styles */
+
+#courseProgressContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#courseProgress {
+    width: 100%;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#courseProgressText {
+    white-space: nowrap;
+}
