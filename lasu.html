@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Picker</title>
+    <title>Study-helper</title>
     <link rel="stylesheet" href="lasu.css">
 </head>
 <body>
     <nav>
         <ul>
-            <li>User: <img src="male-icon.png.png" alt="Male Icon" class="user-icon"> Onimisi</li>
-            <li>User: <img src="male-icon.png.png" alt="Male Icon" class="user-icon"> Cyprain</li>
+            <li>User<b>:</b> <b id="userId"></b> <img src="male-icon.png.png" alt="Male Icon" class="user-icon"> </li>
+            <li></li>
         </ul>
+        <button id="logoutBtn">Logout</button>
+
     </nav>
     <div class="container">
         <h1>Course Picker</h1>
@@ -26,7 +28,8 @@
             <h2>Selected Course:</h2>
             <div id="randomCourse"></div>
         </div>
-    </div>
+    </div>    
     <script src="lasu.js"></script>
+    <script src="lasu-in.js"></script>
 </body>
 </html>
