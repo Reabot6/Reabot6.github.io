@@ -64,7 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem('authenticated') !== 'true') {
         window.location.href = 'lasu-in.html';
     }
-
+     // Display the current username
+     const currentUserSpan = document.getElementById('currentUser');
+     currentUserSpan.textContent = username;
     const courseInput = document.getElementById('courseInput');
     const addCourseButton = document.getElementById('addCourseButton');
     const pickTopicButton = document.getElementById('pickTopicButton');
