@@ -47,3 +47,20 @@ button:hover {
 .container {
     padding: 20px;
 }
+/* Existing styles */
+
+.create-account-link {
+    color: #6A5ACD; /* Slate blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.create-account-link:hover {
+    color: #9370DB; /* Medium purple */
+}
+
+.create-account-message {
+    color: green;
+    font-size: 0.9rem;
+    display: none;
+}
