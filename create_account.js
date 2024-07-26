@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             createAccountMessage.textContent = 'Account created successfully! You can now log in.';
             createAccountMessage.style.color = 'green';
             createAccountMessage.style.display = 'block';
+            alert('this website takes your courses and registers the,so when you want to read it selects a course randomly for you to read,and marks your pregress')
             window.location.href = 'lasu-in.html';
         }
     });
