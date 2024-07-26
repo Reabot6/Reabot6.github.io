@@ -92,6 +92,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (courses.length > 0) {
             const randomIndex = Math.floor(Math.random() * courses.length);
             randomCourseDiv.textContent = courses[randomIndex];
+            
+            // Update pick count
+            coursePickCounts[pickedCourse] = (coursePickCounts[pickedCourse] || 0) + 1;
+            updateLocalStorage();
+
+            // Calculate and display percentage
+            const totalPicks = Object.values(coursePickCounts).reduce((sum, count) => sum + count, 0);
+            const pickPercentage = ((coursePickCounts[pickedCourse] / totalPicks) * 100).toFixed(2);
+            coursePercentageDiv.textContent = `Picked ${pickPercentage}% of the time`;
         } else {
             randomCourseDiv.textContent = 'No courses available';
         }
