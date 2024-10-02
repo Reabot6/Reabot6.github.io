@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+#flowerCanvas {
+    background-color: white;
+    border: 5px solid #b56576;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 300px;  /* Smaller width */
+    height: 300px; /* Smaller height */
+}
+
+#textContainer {
+    margin-top: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #5d3f6a;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
