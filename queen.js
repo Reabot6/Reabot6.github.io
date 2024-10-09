@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const value = input.value.toLowerCase();
 
             // Check if the value matches 'ball'
-            if (value === 'november 24') {
+            if (value === 'july 24') {
                 gate.classList.add('open');
                 input.value = ''; // Clear input after correct value
-
+                 prompt('welcome pookie')
                 // Keep the window open and do not reset
                 setTimeout(() => {
                     // half.style.display = 'none'; // Hide the gate after it opens
