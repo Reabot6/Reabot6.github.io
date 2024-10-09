@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Text Typing Effect
-    const text = "I love you ehikowoicho";
+    const text = "https://reabot6.github.io/snake.html";
     const textContainer = document.getElementById("textContainer");
     let charIndex = 0;
     function typeText() {
