@@ -1,0 +1,166 @@
+/* Global Styles */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b2d42; /* Dark, castle-like vibe */
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Castle Icons */
+.castle-icons {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.icon {
+    font-size: 40px;
+    margin: 10px;
+    display: inline-block;
+    color: #f0e4d7;
+}
+
+/* Container for the gate */
+.container {
+    text-align: center;
+}
+
+.gate {
+    width: 200px;
+    height: 300px;
+    background-color: white;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Gate halves */
+.top-half, .bottom-half {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: #98c1d9;
+    border: 1px solid #3d5a80 ;
+    transition: transform 3s ease-in-out, opacity 8s ease;
+}
+
+.top-half {
+    top: 0;
+}
+
+.bottom-half {
+    bottom: 0;
+}
+
+/* Input and search icon hidden initially */
+input {
+    display: none;
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 5px;
+    padding-right: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/54/54481.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+/* Hover text */
+.hover-text {
+    color: #ffffff;
+    margin-top: 20px;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+}
+
+p:hover {
+    opacity: 0; /* Make text disappear on hover */
+}
+
+/* Window open animation */
+.open .top-half {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.open .bottom-half {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+/* Crown and princessy icons scattered */
+body::before {
+    content: "👑 👸 🌈 HER 🏰";
+    font-size: 5rem;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    transform: rotate(-20deg);
+    opacity: 0.1;
+    color: pink;
+    font-family: cursive;
+}
+
+body::after {
+    content: "💜💐 ✨ 🌈💜 🔮";
+    font-size: 5rem;
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    transform: rotate(-20%);
+    opacity: 0.2;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .gate {
+        width: 150px; /* Adjust gate size for smaller screens */
+        height: 220px;
+    }
+
+    .top-half, .bottom-half {
+        height: 45%; /* Adjust height for smaller screens */
+    }
+
+    .hover-text {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    input {
+        width: 90%; /* Make input wider on smaller screens */
+    }
+
+    body::before,
+    body::after {
+        font-size: 3rem; /* Reduce icon size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gate {
+        width: 120px; /* Further adjust for extra small screens */
+        height: 180px;
+    }
+
+    .top-half, .bottom-half {
+        height: 40%; /* Further adjust height */
+    }
+
+    .hover-text {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    input {
+        font-size: 14px; /* Smaller input font size */
+    }
+
+    body::before,
+    body::after {
+        font-size: 2rem; /* Further reduce icon size */
+    }
+}

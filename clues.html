@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scattered Alphabets Background</title>
+    <link rel="icon" href="rea.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            position: relative;
+            background-color: #333; /* Dark background for contrast */
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            display: flex;
+            flex-wrap: wrap;
+            pointer-events: none; /* Allow clicks to pass through */
+        }
+
+        .letter {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.1); /* Light letters with low opacity */
+            transform: rotate(calc(30deg * var(--random-rotation)));
+            position: relative;
+            animation: float 5s infinite ease-in-out; /* Floating animation */
+        }
+
+        .pop {
+            transition: transform 3s ease-in-out, opacity 5s ease-in-out; /* Adjusted transition */
+            opacity: 0.5; /* Initial opacity */
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .content {
+            z-index: 1; /* Content above the background */
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <!-- JavaScript will populate this with letters -->
+    </div>
+
+    <div class="content">
+        <h1>Welcome! Find clue</h1>
+        <p>Enjoy the scattered letters.</p>
+        <p class="letter pop">https://reabot6.github.io/flower.html</p>
+    </div>
+
+    <script>
+        const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const backgroundDiv = document.querySelector('.background');
+
+        // Create 800 random letters
+        for (let i = 0; i < 800; i++) {
+            const letter = document.createElement('div');
+            letter.className = 'letter';
+            letter.innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
+            letter.style.position = 'absolute';
+            letter.style.top = Math.random() * 100 + 'vh';
+            letter.style.left = Math.random() * 100 + 'vw';
+            letter.style.setProperty('--random-rotation', Math.random() * 12); // Random rotation
+            backgroundDiv.appendChild(letter);
+        }
+
+        // Function to make the pop element brighter and then dim back
+        const popElement = document.querySelector('.pop');
+
+        const brightenAndDim = () => {
+            // Brighten
+            popElement.style.opacity = 1; // Brighten the pop element
+            setTimeout(() => {
+                // Dim back
+                popElement.style.opacity = 0.5; // Dim back to initial opacity
+            }, 5000); // Dim back after 5 seconds
+        };
+
+        // Run the brightenAndDim function every 25 seconds (20 seconds wait + 5 seconds dim)
+        setInterval(brightenAndDim, 25000);
+
+        // Start the first brighten and dim cycle after 20 seconds
+        setTimeout(brightenAndDim, 20000);
+    </script>
+</body>
+</html>
