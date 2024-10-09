@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.fillStyle = gradient;
         ctx.fill();
     }
-
+alert('its a date lol')
     // Text Typing Effect
     const text = "https://reabot6.github.io/snake.html";
     const textContainer = document.getElementById("textContainer");
