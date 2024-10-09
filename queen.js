@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const value = input.value.toLowerCase();
 
             // Check if the value matches 'ball'
-            if (value === 'ball') {
+            if (value === 'november 24') {
                 gate.classList.add('open');
                 input.value = ''; // Clear input after correct value
 
